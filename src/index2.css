@@ -1,0 +1,239 @@
+.darkTheme header .logo {
+    color: #ffffff;
+    border-left: 10px solid #ffffff;
+    border-right: 10px solid #ffffff;
+    border-top: 5px solid #ffffff;
+    border-bottom: 5px solid #ffffff;
+}
+
+.darkTheme header {
+    background-color: #00000091;
+    border-bottom: solid #ffffff; 
+}
+
+.darkTheme ul.nav li {
+    color: #686868;
+    opacity: 0.7;
+}
+
+.darkTheme header ul.nav li:hover {
+    color: #b4b4b4;
+    opacity: 1;
+}
+
+.darkTheme .wrapper {
+    background: #4b4b4b;
+}
+
+.darkTheme .cart-container{
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.darkTheme header .shop-cart-button:hover,
+.darkTheme header .shop-cart-button.active {
+    color: #fffffff5;
+}
+
+.darkTheme .buy {
+    color: #242424b5;
+    background: #c7c7c786;
+    box-shadow: 0 0 10px 10px #d4d4d486, 0 0 10px 10px #d4d4d486 inset;
+}
+
+.darkTheme .buy:hover {
+    color: #ffffffb5;
+    background: #69696986;
+    box-shadow: 0 0 10px 10px #2e2e2e86, 0 0 10px 10px #2e2e2e86 inset;
+}
+
+.darkTheme .trigger {
+    background: #1818189c;
+    color: #ffffff;
+    border-bottom: solid #ffffff;
+}
+
+.darkTheme .trigger:hover {
+    background: #5e5e5ea8;
+}
+
+.darkTheme footer {
+    color: #ffffff;
+}
+
+.darkTheme main .item {
+    background: #3a3a3a;
+    border: 5px solid #ffffff;
+}
+
+.darkTheme main .item h2,
+.darkTheme main .item p,
+.darkTheme main .item b{
+    color: #ffffff;
+}
+
+.darkTheme main b,
+.darkTheme .full-item b {
+    border: #ffffff solid;
+}
+
+.darkTheme main .add-to-cart,
+.darkTheme .full-item .add-to-cart{
+    background: #ffffff;
+    color: #000;
+}
+
+.darkTheme main .add-to-cart:hover,
+.darkTheme .full-item .add-to-cart:hover {
+    background: #686868;
+    color: #222222;
+}
+
+.darkTheme main .item img{
+    border-bottom: 5px solid #ffffff;
+}
+
+.darkTheme main .item .img1,
+.darkTheme .full-item .img1 {
+    border-bottom: 5px solid #ffffff20;
+    border: 5px solid #00000080;
+}
+
+.darkTheme main .item .img1,
+.darkTheme .full-item .img1 {
+    box-shadow: 0 0 15px 10px #ffffff69, 0 0 15px 5px #ffffff69 inset ;
+}
+
+.darkTheme header .shop-cart {
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+}
+
+.darkTheme header .shop-cart .empty {
+    background-color: #000000;
+}
+
+.darkTheme header .shop-cart .item{
+    background: #000;
+    box-shadow: 0 0 25px 30px #00000086, 0 0 25px 30px #00000086 inset;
+}
+
+.darkTheme header .shop-cart h2 {
+    color: #ffffff;
+}
+
+.darkTheme header .shop-cart .sum{
+    color: #ffffff;
+    background: #000;
+    box-shadow: 0 0 25px 30px #00000086, 0 0 25px 30px #00000086 inset;
+}
+
+.darkTheme header .shop-cart .item .close.rounded::before{
+    background: #ffffff;
+} 
+.darkTheme header .shop-cart .item .close.rounded::after{
+    background: #ffffff;
+}
+
+.darkTheme .full-item>div {
+    background: #2e2e2e; 
+}
+
+.darkTheme form {
+    background: #1d1d1d; 
+}
+
+.darkTheme form .name {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
+.darkTheme form .phone {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
+.darkTheme form .message {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
+.darkTheme form .email {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
+.darkTheme form .password {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
+.darkTheme form .verify {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
+.darkTheme form .name1 {
+    color: #fff;
+}
+
+.darkTheme form .phone1 {
+    color: #fff;
+}
+
+.darkTheme form .message1 {
+    color: #fff;
+}
+
+.darkTheme form .email1 {
+    color: #fff;;
+}
+
+.darkTheme form .password1 {
+    color: #fff;
+}
+
+.darkTheme form .verify1 {
+    color: #fff;
+}
+
+.darkTheme .modal-content h2 {
+    color: #ffffff;
+}
+
+.darkTheme .modal-content .sum {
+    color: #ffffff;
+}
+
+.darkTheme .modal-content b {
+    color: #ffffff;
+}
+
+.darkTheme .changePasswordButton {
+    color: #ffffff;
+}
+
+.darkTheme Footer{
+    background-color: #4b4b4b;
+}
+
+.darkTheme .textarea {
+    background: #000000;
+    border: #ffffff solid 5px;
+    color: #ffffff;
+}
+
+.darkTheme .review-display li {
+    background: #000000;
+    border: 5px solid #ffffff;
+    color: #ffffff;
+}
+
+.darkTheme .review-button {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.darkTheme .review-button:hover {
+    background-color: #6b6b6b;
+}
