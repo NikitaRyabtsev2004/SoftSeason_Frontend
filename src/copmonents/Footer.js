@@ -15,7 +15,7 @@ export class Footer extends Component {
   }
 
   fetchReviews = () => {
-    fetch('http://localhost:2000/getReviews')
+    fetch('http://62.217.182.98:2000/getReviews')
       .then(response => response.json())
       .then(data => {
         if (data.status === 200) {
@@ -39,7 +39,7 @@ export class Footer extends Component {
       day: '2-digit',
     });
 
-    fetch('http://localhost:2000/submitReview', {
+    fetch('http://62.217.182.98:2000/submitReview', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
