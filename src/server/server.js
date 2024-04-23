@@ -108,7 +108,7 @@ server.post('/register', async (req, res) => {
         });
         await transporter.sendMail({
           from: "NikitaRyabtsev2004@yandex.ru",
-          to: "NikitaRyabtsev2004@yandex.ru",
+          to: `${email}`,
           subject: "Ваш код для проверки",
           text: `Ваш код для проверки: ${verifyCode}`,
           html: `<p>Ваш логин для входа: ${email}</p>

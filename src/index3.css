@@ -46,6 +46,10 @@ footer p, footer b {
     border-radius: 15px;
     height: auto;
     border: 5px solid #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: oblique;
+    letter-spacing: 1px;
 }
 
 .textarea {

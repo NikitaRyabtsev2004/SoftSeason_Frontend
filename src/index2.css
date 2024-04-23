@@ -4,6 +4,7 @@
     border-right: 10px solid #ffffff;
     border-top: 5px solid #ffffff;
     border-bottom: 5px solid #ffffff;
+    background: #00000080;
 }
 
 .darkTheme header {
@@ -12,12 +13,14 @@
 }
 
 .darkTheme ul.nav li {
-    color: #686868;
+    color: #3a3a3a;
     opacity: 0.7;
+    border: 1px #ffffff solid;
+    transition: all 500ms ease;
 }
 
 .darkTheme header ul.nav li:hover {
-    color: #b4b4b4;
+    color: #ffffff;
     opacity: 1;
 }
 
@@ -27,7 +30,7 @@
 
 .darkTheme .cart-container{
     color: #ffffff;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .darkTheme header .shop-cart-button:hover,
@@ -48,13 +51,14 @@
 }
 
 .darkTheme .trigger {
-    background: #1818189c;
+    background: #856661;
     color: #ffffff;
-    border-bottom: solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
 }
 
 .darkTheme .trigger:hover {
-    background: #5e5e5ea8;
+    background: #4b4b4b;
 }
 
 .darkTheme footer {
@@ -74,11 +78,12 @@
 
 .darkTheme main b,
 .darkTheme .full-item b {
-    border: #ffffff solid;
+    border: 5px #ffffff solid;
 }
 
 .darkTheme main .add-to-cart,
 .darkTheme .full-item .add-to-cart{
+    margin: -53px -10px 0 0 ;
     background: #ffffff;
     color: #000;
 }
@@ -93,15 +98,29 @@
     border-bottom: 5px solid #ffffff;
 }
 
-.darkTheme main .item .img1,
-.darkTheme .full-item .img1 {
-    border-bottom: 5px solid #ffffff20;
-    border: 5px solid #00000080;
+main .item :nth-child(even) .img1 ,
+.full-item:nth-child(even) .img1 {
+    box-shadow: 0 0 10px 5px #FFA07A, 0 0 10px 5px #ffffff69 inset ;
+}
+
+main .item :nth-child(odd) .img1 ,
+.full-item:nth-child(odd) .img1 {
+    box-shadow: 0 0 10px 5px #e59182, 0 0 10px 5px #ffffff69 inset ;
 }
 
 .darkTheme main .item .img1,
 .darkTheme .full-item .img1 {
-    box-shadow: 0 0 15px 10px #ffffff69, 0 0 15px 5px #ffffff69 inset ;
+    border-bottom: 3px solid #ffa07a9a;
+}
+
+.darkTheme main .item .img1-click,
+.darkTheme .full-item .img1-click {
+    border-bottom: 5px solid #ffa07a9a;
+}
+
+.darkTheme main .item .img1,
+.darkTheme .full-item .img1 {
+    box-shadow: 0 0 10px 5px #ffa07a9a, 0 0 10px 5px #ffffff69 inset ;
 }
 
 .darkTheme header .shop-cart {
@@ -114,25 +133,30 @@
 }
 
 .darkTheme header .shop-cart .item{
-    background: #000;
-    box-shadow: 0 0 25px 30px #00000086, 0 0 25px 30px #00000086 inset;
+    background: #d4d4d486;
+    box-shadow: 0 0 10px 10px #d4d4d486, 0 0 10px 10px #d4d4d486 inset;
 }
 
 .darkTheme header .shop-cart h2 {
-    color: #ffffff;
+    color: #000000;
+}
+
+.darkTheme header .shop-cart b {
+    color: #000000;
 }
 
 .darkTheme header .shop-cart .sum{
-    color: #ffffff;
-    background: #000;
-    box-shadow: 0 0 25px 30px #00000086, 0 0 25px 30px #00000086 inset;
+    border: 1px solid #000000;
+    color: #242424b5;
+    background: #c7c7c786;
+    box-shadow: 0 0 10px 10px #d4d4d486, 0 0 10px 10px #d4d4d486 inset;
 }
 
 .darkTheme header .shop-cart .item .close.rounded::before{
-    background: #ffffff;
+    background: #000000;
 } 
 .darkTheme header .shop-cart .item .close.rounded::after{
-    background: #ffffff;
+    background: #000000;
 }
 
 .darkTheme .full-item>div {

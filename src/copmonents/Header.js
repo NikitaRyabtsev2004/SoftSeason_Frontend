@@ -31,6 +31,7 @@ class Header extends Component {
                             <Order onDelete={props.onDelete} key={el.id} item={el} />
                         ))}
                         <p className="sum">Сумма: {new Intl.NumberFormat().format(sum)}$</p>
+                        <div style={{ userSelect: "none" }} className='buy' onClick={this.props.handleFormOpen}>Оформить заказ</div>
                     </div>
                 </div>
             );
@@ -60,12 +61,11 @@ class Header extends Component {
                                     </div>
                                 )}
                             </div>
-                            <div style={{ userSelect: "none" }} className='buy' onClick={this.props.handleFormOpen}>Оставить заявку</div>
+
                             <ul style={{ userSelect: "none" }} className='nav'>
                                 {this.props.isLoggedIn ? (
                                     <>
                                         <li>{this.state.email}</li>
-                                        <li></li>
                                     </>
                                 ) : (
                                     <li onClick={this.props.openLoginModal}>Войти</li>

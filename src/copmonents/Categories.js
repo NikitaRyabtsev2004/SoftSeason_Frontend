@@ -47,13 +47,11 @@ export class Categories extends Component {
                     <div className="full-item">
                         <div className="modal-content">
                             <div className="categories">
-                                <h style={{ position: "relative", display: "block" }}>Категории товаров</h>
+                                <o style={{ position: "relative", display: "block" }}>Категории товаров 1</o>
                                 {this.state.categories.map(el => (
-                                    <div key={el.key} onClick={() => this.props.chooseCategory(el.key)}>{el.name}</div>
-                                ))}
-                                <h style={{ position: "relative", display: "block" }}>Категории товаров 2</h>
-                                {this.state.categories.map(el => (
-                                    <div key={el.key} onClick={() => this.props.chooseCategory(el.key)}>{el.name}</div>
+
+                                    <li key={el.key} onClick={() => this.props.chooseCategory(el.key)}>{el.name}</li>
+
                                 ))}
                             </div>
                             <div className='closeButton' onClick={this.handleFormClose}>hide</div>

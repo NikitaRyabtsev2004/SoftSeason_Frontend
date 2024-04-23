@@ -71,7 +71,7 @@ class LoginModal extends Component {
     }
 
     verifyCodeSend = () => {
-        fetch('https://1b5c-188-32-204-198.ngrok-free.app/register', {
+        fetch('http://localhost:2000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -5,6 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu+Condensed&display=swap');
+
+
 ::-webkit-scrollbar {
     background-color: rgb(33, 2, 17);
     width: 6px;
@@ -27,7 +32,7 @@
 body {
 
     color: #222;
-    font-family: "Russo One", sans-serif;
+    font-family: "Ubuntu Condensed", sans-serif;
     font-weight: 200;
     font-style: italic;
     overflow-x: hidden;
@@ -44,6 +49,87 @@ body {
     transition: all 500ms ease;
     margin: auto;
 }
+
+.confetti1 {
+    background-image: url('./img/ball1.png');
+    animation: fall 70s infinite;
+}
+.confetti2 {
+    background-image: url('./img/ball2.png'); 
+    animation: fall1 75s infinite linear;
+}
+.confetti3 {
+    background-image: url('./img/ball3.png'); 
+    animation: fall 80s infinite linear;
+}
+.confetti4 {
+    background-image: url('./img/ball4.png'); 
+    animation: fall1 85s infinite linear;
+}
+.confetti5 {
+    background-image: url('./img/ball5.png'); 
+    animation: fall 90s infinite linear;
+}
+.confetti6 {
+    background-image: url('./img/ball6.png'); 
+    animation: fall1 100s infinite linear;
+}
+.confetti7 {
+    background-image: url('./img/ball7.png');
+    animation: fall 105s infinite linear;
+}
+.confetti8 {
+    background-image: url('./img/ball8.png'); 
+    animation: fall1 110s infinite linear;
+}
+.confetti9 {
+    background-image: url('./img/ball9.png');
+    animation: fall 65s infinite linear;
+}
+.confetti10 {
+    background-image: url('./img/ball10.png'); 
+    animation: fall1 60s infinite linear;
+}
+.confetti11 {
+    background-image: url('./img/ball11.png');
+    animation: fall 55s infinite linear;
+}
+.confetti12 {
+    background-image: url('./img/ball12.png'); 
+    animation: fall1 50s infinite linear;
+}
+.confetti13 {
+    background-image: url('./img/ball13.png'); 
+    animation: fall 115s infinite linear;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Это позволит кликам проходить через контейнер конфетти */
+    overflow: hidden; /* Это предотвратит выход конфетти за пределы контейнера */
+   }
+   
+@keyframes fall {
+    0% {
+      transform: translateY(-200px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(2000px) rotate(10000deg);
+    }
+  }
+  
+@keyframes fall1 {
+    0% {
+      transform: translateY(-200px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(2000px) rotate(-7000deg);
+    }
+  }
 
 @media (min-width:1250) {
     .wrapper {
@@ -67,7 +153,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    max-height: 100px;
+    max-height: 120px;
     background-color: #80808056;
     border-radius: 0px 0px 20px 20px;
     z-index: 102;
@@ -107,22 +193,29 @@ header:hover {
     transform: scale(1.005);
 }
 
+
 header .logo {
+    background: #ffffff93;
     transition: all 500ms ease;
-    padding: 0px 10px 0px 10px;
+    padding: 5px 10px;
     border-left: 10px solid #000000;
     border-right: 10px solid #000000;
     border-top: 5px solid #000000;
     border-bottom: 5px solid #000000;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 40px;
     font-family: "Caveat", cursive;
     font-optical-sizing: auto;
     font-style: normal;
     color: #000000;
     border-radius: 20px;
-    width: 200px;
-    animation: borderColorAnimation 20s infinite linear; /* 4 секунды анимации + 5 секунд паузы */
+    width: auto;
+    animation: borderColorAnimation1 5s infinite linear; /* 4 секунды анимации + 5 секунд паузы */
+}
+@keyframes borderColorAnimation1 {
+    0% { border-color: #FFA07A; }
+    50% { border-color: #e59182; } /* темно-оранжевый цвет */
+    100% { border-color: #FFA07A; }
 }
 
 @keyframes borderColorAnimation {
@@ -239,21 +332,18 @@ header .logo {
         border-right: 10px solid #af69a4;
         border-top: 5px solid #000000;
         border-bottom: 5px solid #000000;
-        color: #000000;
     }
     95% {
         border-left: 10px solid #000000;
         border-right: 10px solid #000000;
         border-top: 5px solid #000000;
         border-bottom: 5px solid #af69a4;
-        color: #ffffff;
     }
     100% {
         border-left: 10px solid #000000;
         border-right: 10px solid #000000;
         border-top: 5px solid #000000;
         border-bottom: 5px solid #000000;
-        color: #000000;
     }
 }
 
@@ -265,15 +355,45 @@ header ul.nav {
 }
 
 header ul.nav li {
-    display: inline;
-    margin-left: 20px;
+    display: inline-block;
+    margin-right: 20px;
     cursor: pointer;
-    transition: opacity 500ms ease;
-    color: #000000;
+    transition: opacity 0.5s ease;
+    opacity: 1; 
+    color: #FFFFFF;
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    background: #FFDAB9;
+    border-radius: 20px;
+    padding: 10px 20px; 
+    text-align: center;
+    letter-spacing: 1px;
+    border: 1px #000000 solid;
 }
 
 header ul.nav li:hover {
-    opacity: 0.5;
+    opacity: 0.5; 
+}
+
+ul.nav {
+    list-style-type: none; 
+}
+
+/* Стилизация для кнопки "Войти" */
+ul.nav li:nth-child(1) {
+    background: #FFA07A; /* светло-оранжевый фон */
+}
+
+/* Стилизация для кнопки "Выйти" */
+ul.nav li:nth-child(2) {
+    background: #e59182; /* темно-оранжевый фон */
+}
+
+/* Стилизация для кнопки "Поменять тему" */
+ul.nav li:nth-child(3) {
+    background: #FFA07A; /* светло-оранжевый фон */
 }
 
 .presentation {
@@ -316,7 +436,6 @@ header .presentation::after {
     width: 300px;
     font-size: 40px;
     color: #fff;
-    font-family: "Caveat", cursive;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
@@ -330,15 +449,14 @@ header .presentation::before {
     width: 300px;
     font-size: 30px;
     color: #fff;
-    font-family: "Caveat", cursive;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
 }
 .cart-container{
-    color: #494949;
+    color: #e59182;
+    margin-top: 30px;
     margin-right: 20px;
-    margin-top: 15px;
 }
 header .shop-cart-button {
     float: right;
@@ -349,7 +467,7 @@ header .shop-cart-button {
 
 header .shop-cart-button:hover,
 header .shop-cart-button.active {
-    color: #00000075;
+    color: #64372fc0;
     transform: scale(1.5)
 }
 
@@ -357,7 +475,7 @@ header .shop-cart {
     border: 5px solid #000;
     position: absolute;
     top: 130px;
-    width: 150px;
+    width: 160px;
     background: #00000066;
     border-radius: 55px;
     animation: slideIn 1.5s forwards;
@@ -366,8 +484,10 @@ header .shop-cart {
     z-index: 101;
     max-height: 400px;
     overflow-y: auto;
-    color: #ffffff
+    color: #ffffff;
+    overflow-x:hidden;
 }
+
 
 header .shop-cart h2 {
     font-size: 35px;
@@ -406,11 +526,12 @@ header .shop-cart .item {
     float: left;
     margin-bottom: 40px;
     transition: all 0.5s ease;
-    background: #ffffff86;
+    background: #00000091;
     border-radius: 45px;
     padding: 10px 0 0 0;
-    box-shadow: 0 0 20px 10px #ffffff86, 0 0 5px 5px #00000086 inset;
+    box-shadow: 0 0 20px 10px #00000091, 0 0 5px 5px #00000091 inset;
     animation: slideInOpacity 0.7s;
+    order: 1;
 
 }
 
@@ -427,10 +548,14 @@ header .shop-cart .item {
 header .shop-cart .empty {
     color: #000000;
     font-weight: 600;
-    font-family: "Amatic SC", sans-serif;
     font-style: normal;
-    font-size: 28px;
     text-align: center;
+    background: #ffffff;
+}
+
+header .shop-cart .empty h2{
+    font-size: 25px;
+    font-weight: 200;
 }
 
 header .shop-cart .item img {
@@ -450,7 +575,6 @@ header .shop-cart .item h2 {
     text-align: center;
     font-size: 20px;
     margin-bottom: 10px;
-    font-family: "Bad Script", cursive;
     font-weight: 400;
     font-style: normal;
     padding: 0 0 0 10px;
@@ -490,7 +614,7 @@ header .shop-cart .item .close::after {
     top: 50%;
     left: 0;
     margin-top: -1px;
-    background: #000;
+    background: #ffffff;
 }
 
 header .shop-cart .item .close::before {
@@ -534,44 +658,44 @@ header .shop-cart .item .close.blades::after {
 }
 
 header .shop-cart .sum {
-    height: 70px;
+    height: auto;
     float: left;
     width: 100%;
     font-weight: 900;
-    font-size: 25px;
+    font-size: 30px;
     margin: 0 0 10px 0;
-    color: #1a3912b5;
-    background: #ffffff86;
+    color: #ffffff;
     border-radius: 20px;
-    font-family: "Bad Script", cursive;
     font-weight: 400;
     font-style: normal;
-    box-shadow: 0 0 10px 10px #ffffff86, 0 0 10px 10px #ffffff86 inset;
     animation: slideInOpacity 0.7s;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
+    order: 2;
+    background: #00000091;
 }
 
 .buy {
-    font-size: 25px;
+    font-size: 30px;
     color: #ffffffb5;
-    background: #69696986;
-    border-radius: 20px;
-    font-family: "Bad Script", cursive;
-    font-weight: 400;
     font-style: normal;
-    box-shadow: 0 0 10px 10px #2e2e2e86, 0 0 10px 10px #2e2e2e86 inset;
     animation: slideInOpacity 0.7s;
     cursor: pointer;
     transition: all 1000ms ease;
+    letter-spacing: -1px;
+    text-align: center;
+    order: 3;
+    float: left;
+    border-radius: 25px;
+    background: #00000091;
+
 }
 
 .buy:hover {
     color: rgb(63, 63, 63);
     background: #aaaaaa;
-    transform: scale(1.1);
     box-shadow: 0 0 10px 10px #5c5c5c86, 0 0 10px 10px #5c5c5c86 inset;
 }
 
@@ -594,8 +718,7 @@ header .shop-cart .sum {
 
 .trigger {
     position: sticky;
-    width: 100%;
-    background: #707070;
+    background: #e59182;
     cursor: pointer;
     height: 40px;
     border-radius: 20px;
@@ -609,10 +732,14 @@ header .shop-cart .sum {
     top: 80px;
     animation: slideInTriger 2s forwards;
     z-index: 102;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0 100px;
 }
 
 .trigger:hover {
-    background: #515151;
+    background: #ffffff;
 }
 
 .triger-background {
@@ -624,8 +751,8 @@ header .shop-cart .sum {
     border-radius: 20px;
     transition: all 500ms ease;
     z-index: 102;
-    left: 50%; /* Центрируем по горизонтали относительно родительского элемента */
-    transform: translateX(-50%); /* Сдвигаем элемент обратно на половину его ширины и высоты */
+    left: 50%;
+    transform: translateX(-50%); 
 }
 
 
@@ -681,25 +808,59 @@ header .shop-cart .sum {
     transform: scale(1.0);
 }
 
+.categories o{
+    color: #000000;
+    font-size: 30px;
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-style: normal;
+}
 
-.categories div {
-    display: inline-block;
+.categories li {
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    align-items: center;
+    display: flex;
     background: #82d3d3;
     border-radius: 15px;
     padding: 10px 10px;
     cursor: pointer;
     border: 1px solid transparent;
     transition: all 500ms ease;
-    font-family: "Nanum Myeongjo", serif;
     font-weight: 400;
     font-style: normal;
-    color: #ff00d0;
+    color: #000000;
     height: 15px;
     line-height: 20px;
     text-align: center;
     position: sticky;
     border: 1px solid #000;
     width: 100px;
+    margin: 0 0 5px 0;
+    justify-content: center;
+}
+
+
+.categories li{
+    list-style-type: none; 
+}
+
+.categories li:nth-child(2) {
+    background: #FFA07A;
+}
+
+.categories li:nth-child(3) {
+    background: #e59182;
+}
+.categories li:nth-child(4) {
+    background: #FFA07A;
+}
+
+.categories li:nth-child(5) {
+    background: #e59182;
+}
+.categories li:nth-child(6) {
+    background: #FFA07A;
 }
 
 
@@ -754,7 +915,7 @@ header .shop-cart .sum {
         margin: 0 0 0 -20px;
     }
     header .shop-cart {
-        margin: 0 0 0 65px;
+        margin: 0 0 0 15px;
     }
     header .shop-cart .item {
         border-radius: 45px 45px 0 0;
@@ -791,6 +952,10 @@ header .shop-cart .sum {
         display: flex;
         flex-direction: column;
     }
+    header ul.nav li{
+        padding: 1px;
+        margin-bottom: 1px;
+    }
     .buy {
         font-size: 18px;
         width: 65px;
@@ -822,7 +987,7 @@ header .shop-cart .sum {
     }
     .cart-container{
         margin-right: 30px;
-        margin-top: 0px;
+        margin-top: 20px;
     }
     .payButton{
         margin: 30px 0 0 50px;
@@ -880,7 +1045,7 @@ main {
 }
 
 main .item {
-    opacity: 85%;
+    opacity: 95%;
     width: 25.5%;
     margin-bottom: 50px;
     background: #b8b8b8;
@@ -946,33 +1111,52 @@ main .item img{
 
 main .item .img1,
 .full-item .img1 {
-    top: 10px;
+    top: 1px;
     position: absolute;
-    width: 70px;
+    width: 60px;
     border-radius: 50%;
     transition: all 500ms ease;
     cursor: pointer;
-    border: 5px solid #00000080;
+    border: 3px solid #ffa07a9a;
     z-index: 1;
     margin: -10px 0 0 5px;
 
 }
 
+main .item:hover .img1:hover {
+    transform: scale(1.2);
+    animation: shadowAnimation 1.5s infinite;
+    opacity: 100%;
+}
+
+
 @keyframes scaleAnimation {
     0% {
         transform: scale(1.0);
-        box-shadow: 0 0 15px 10px #00000069, 0 0 15px 5px #000000 inset ;
+        box-shadow: 0 0 15px 10px #7e7e7e69, 0 0 15px 5px #000000 inset ;
         opacity: 60%;
     }
     50% {
         transform: scale(1.1);
-        box-shadow: 0 0 25px 20px #00000069, 0 0 15px 5px #000000 inset ;
+        box-shadow: 0 0 20px 15px #805d5d69, 0 0 15px 5px #000000 inset ;
         opacity: 100%;
     }
     100% {
         transform: scale(1.0);
-        box-shadow: 0 0 15px 10px #00000069, 0 0 15px 5px #000000 inset ;
+        box-shadow: 0 0 15px 10px #7e7e7e69, 0 0 15px 5px #000000 inset ;
         opacity: 60%;
+    }
+}
+
+@keyframes shadowAnimation {
+    0% {
+        box-shadow: 0 0 10px 5px #ffa07a3f, 0 0 15px 5px #ffffff inset ;
+    }
+    50% {
+        box-shadow: 0 0 15px 10px #ffa07a9a, 0 0 15px 5px #ffffff inset ;
+    }
+    100% {
+        box-shadow: 0 0 10px 5px #ffa07a3f, 0 0 15px 5px #ffffff inset ;
     }
 }
 
@@ -996,13 +1180,29 @@ main .item:hover .img1 {
       z-index: 1;
       margin: -150px 0 0 0;
       box-shadow: 0 0 25px 15px #0000004f, 0 0 25px 15px #0000004f inset;
-      border: 5px solid #000000a2;
+      border: 5px solid #ffa07a9a;
       border-radius: 50%;
       text-align: center;
       justify-content: center;
       align-items: center;
       transform: scale(1);
   }
+
+  main .item:hover .img1-click:hover {
+    animation: shadowAnim 2s infinite;
+}
+
+  @keyframes shadowAnim {
+    0% {
+        box-shadow: 0 0 20px 15px #88787241, 0 0 15px 5px #ffa07a36 inset ;
+    }
+    50% {
+        box-shadow: 0 0 30px 20px #ffa07a67, 0 0 15px 5px #ffa07a36 inset ;
+    }
+    100% {
+        box-shadow: 0 0 20px 15px #88787241, 0 0 15px 5px #ffa07a36 inset ;
+    }
+}
   
   @media (min-width: 600px) {
       .item .img1-click,
@@ -1073,20 +1273,27 @@ main .item .mainImg img:hover,
 
 main h2,
 .full-item h2,
-main p,
-.full-item p {
-    margin: 10px 0 10px 0;
-    color: #333;
-    font-family: "Amatic SC", sans-serif;
-    font-weight: 700;
+main p {
+    margin: 20px 0 10px 0px;
+    color: #ffffff;
+    font-weight: 400;
     font-style: normal;
     text-align: center;
     justify-content: center;
     align-items: center;
+    letter-spacing: normal;
 }
 
 .full-item h2 {
+    margin: 10px 0 10px 0px;
     font-size: 40px;
+}
+
+.full-item p {
+    margin: 10px 0 10px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -1094,20 +1301,25 @@ main b,
 .full-item b {
     margin: 0 10px 0 10px;
     border-radius: 20px;
-    border: #000 solid;
     border-width: 5px; /* Установите желаемую ширину границы */
-    color: #333;
-    font-family: "Amatic SC", sans-serif;
-    font-weight: 700;
-    font-size: 45px;
+    color: #ffffff;
+    font-weight: 400;
     font-style: normal;
+    font-size: 38px;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: block;
+    letter-spacing: -2px;
 }
 
+main .item:nth-child(odd) b {
+    border: 5px #e59182 solid;
+}
 
+main .item:nth-child(even) b {
+    border: 5px #FFA07A solid;
+}
 
 main b .full-item b {
     color: #5fa35f;
@@ -1156,8 +1368,7 @@ main .add-to-cart,
 .full-item .add-to-cart {
     position: absolute;
     right: 20px;
-    bottom: 29px;
-    background: #000000;
+    margin: -54px -10px 0 0 ;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -1169,12 +1380,19 @@ main .add-to-cart,
     cursor: pointer;
     font-weight: 600;
     font-size: 20px;
-    transition: transform 500ms ease;
     transition: all 500ms ease;
 }
 
+.item:nth-child(odd) .add-to-cart {
+    background: #e59182;
+}
+
+.item:nth-child(even) .add-to-cart {
+    background: #FFA07A;
+}
+
 .full-item .add-to-cart{
-    margin: 20px 30px 20px 20px;
+    margin: -50px 20px 20px 20px;
 }
 
 main .add-to-cart:hover,
@@ -1193,10 +1411,8 @@ footer {
 .button-88 {
     position: relative;
     --b: 3px;
-    /* border thickness */
     --s: .45em;
-    /* size of the corner */
-    --color: #373B44;
+    --color: #ffffff;
     padding: calc(.5em + var(--s)) calc(.9em + var(--s));
     color: var(--color);
     --_p: var(--s);
@@ -1212,10 +1428,7 @@ footer {
     touch-action: manipulation;
     align-items: center;
     text-align: center;
-}
-
-.button-88-container {
-    margin: 0 120px 0 120px;
+    margin: 0 120px 10px 120px;
 }
 
 .button-88:hover,
@@ -1233,9 +1446,10 @@ footer {
 .animated-text {
     font-size: 30px;
     animation: lineSlide 1s linear forwards;
-    text-align: center;
-    align-items: center;
-    align-content: center;
+    margin: 10px 0 10px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
 }
 
 @keyframes lineSlide {
@@ -1371,7 +1585,6 @@ textarea {
     font-size: 25px;
     color: #1a3912b5;
     border-radius: 20px;
-    font-family: "Bad Script", cursive;
     font-weight: 400;
     font-style: normal;
     animation: slideInOpacity 0.7s;
