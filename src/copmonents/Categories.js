@@ -58,7 +58,7 @@ export class Categories extends Component {
                         </div>
                     </div>
                 )}
-                <div className='triger-background'>
+                <div className='trigger-background'>
                     <div className='trigger' onClick={this.handleFormOpen} >Отсортировать</div>
                 </div >
             </>

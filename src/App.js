@@ -7,7 +7,6 @@ import ShowFullItem from "./copmonents/ShowFullItem.js";
 import FormModal from "./copmonents/ShowForm.js";
 import LoginModal from "./copmonents/LoginForm.js";
 import items from "./copmonents/ProductData.js";
-//<div className='presentation'></div>
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -39,11 +38,10 @@ class App extends React.Component {
     this.handleDarkTheme = this.handleDarkTheme.bind(this);
   }
 
-  createConfetti() {
+  createConfetti(maxConfettis = 70, flyTime = 5000) {
     const container = document.querySelector(".confetti-container");
-    const numConfettis = 300;
     const pastelColors = ["#FFB6C1", "#FFD700", "#98FB98", "#87CEFA", "#FFA07A"];
-    const maxConfettiTypes = 13; // Максимальное количество типов клубочков
+    const maxConfettiTypes = 13;
 
     const createOneConfetti = () => {
       const confetti = document.createElement("div");
@@ -51,32 +49,32 @@ class App extends React.Component {
       const confettiClass = `confetti${confettiNumber}`;
       confetti.classList.add(confettiClass);
       confetti.style.color = pastelColors[Math.floor(Math.random() * pastelColors.length)];
-      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.top = `${Math.random() * 100}%`;
+      confetti.style.left = `${Math.random() * 100}%`;
       confetti.style.height = "80px";
       confetti.style.width = "80px";
       confetti.style.position = "absolute";
-      confetti.style.backgroundSize = "contain"
+      confetti.style.backgroundSize = "contain";
       container.appendChild(confetti);
 
+      confetti.style.animation = `appearAndDisappear 2s forwards`;
       setTimeout(() => {
-        confetti.style.animationName = "fadeOut";
+        confetti.style.animation = `disappear 2s forwards`;
         setTimeout(() => {
           container.removeChild(confetti);
-        }, 5000);
-      }, 200000);
+        }, 10000);
+      }, 4000);
     };
 
-
     const addConfetti = () => {
-      if (container.children.length < numConfettis) {
+      if (container.children.length < maxConfettis) {
         createOneConfetti();
-        setTimeout(addConfetti, 4000);
+        setTimeout(addConfetti, 400);
       }
     };
 
     addConfetti();
   }
-
 
   handleDarkTheme() {
     const newIsDark = !this.state.isDark;
@@ -180,7 +178,7 @@ class App extends React.Component {
 
           <Categories chooseCategory={this.chooseCategory} />
 
-
+          <div className='presentation'></div>
 
           <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
           {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} />}

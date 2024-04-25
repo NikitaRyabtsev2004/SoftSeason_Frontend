@@ -1,0 +1,103 @@
+.confetti1 {
+    background-image: url('../img/ball1.png');
+}
+.confetti2 {
+    background-image: url('../img/ball2.png'); 
+}
+.confetti3 {
+    background-image: url('../img/ball3.png'); 
+}
+.confetti4 {
+    background-image: url('../img/ball4.png'); 
+}
+.confetti5 {
+    background-image: url('../img/ball5.png'); 
+}
+.confetti6 {
+    background-image: url('../img/ball6.png'); 
+}
+.confetti7 {
+    background-image: url('../img/ball7.png');
+}
+.confetti8 {
+    background-image: url('../img/ball8.png'); 
+}
+.confetti9 {
+    background-image: url('../img/ball9.png');
+}
+.confetti10 {
+    background-image: url('../img/ball10.png'); 
+}
+.confetti11 {
+    background-image: url('../img/ball11.png');
+}
+.confetti12 {
+    background-image: url('../img/ball12.png'); 
+}
+.confetti13 {
+    background-image: url('../img/ball13.png'); 
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Это позволит кликам проходить через контейнер конфетти */
+    overflow: hidden; /* Это предотвратит выход конфетти за пределы контейнера */
+    z-index: 1;
+    opacity: 20%;
+   }
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.presentation {
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-image: url(../img/bg1.jpg);
+    position: sticky;
+    margin-bottom: 100px;
+    top: -750px;
+    border-radius: 50px;
+    z-index: 100;
+    margin-top: 70px;
+    animation: slideInPresentation 3s forwards;
+    justify-content: center;
+    align-items: center;
+    animation: colorAnim1 4s infinite;
+}
+
+header .presentation::after {
+    content: 'Текст-1';
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    font-size: 40px;
+    color: #fff;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+header .presentation::before {
+    content: 'Текст-2';
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    width: 300px;
+    font-size: 30px;
+    color: #fff;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/

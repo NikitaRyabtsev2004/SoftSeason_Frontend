@@ -1,0 +1,151 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%; 
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.img-hidden {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+main .item img{
+    width: 100%;
+    border-radius: 90px 90px 0 0;
+    transition: all 500ms ease;
+    cursor: pointer;
+    box-shadow: 0 0 20px 10px #ffffff inset;
+    border-bottom: 5px solid #000000;
+    margin: 0 0 0 0;
+}
+.full-item img {
+    width: 100%;
+    border-radius: 90px 90px 0 0;
+    transition: all 500ms ease;
+    cursor: pointer;
+    box-shadow: 0 0 20px 10px #ffffff inset;
+    border-bottom: 5px solid #ffffff;
+    margin: 0 0 0 0;
+    cursor: zoom-in
+}
+
+main .item .img1,
+.full-item .img1 {
+    top: 1px;
+    position: absolute;
+    width: 60px;
+    border-radius: 50%;
+    transition: all 500ms ease;
+    cursor: pointer;
+    border: 3px solid #ffa07a9a;
+    z-index: 1;
+    margin: -10px 0 0 5px;
+
+}
+
+main .item:nth-child(4n+1) .img1 {
+    box-shadow: 0 0 10px 5px var(--nth-1);
+}
+
+main .item:nth-child(4n+2) .img1 {
+    box-shadow: 0 0 10px 5px var(--nth-2);
+}
+
+main .item:nth-child(4n+3) .img1 {
+    box-shadow: 0 0 10px 5px var(--nth-3);
+}
+
+main .item:nth-child(4n+4) .img1 {
+    box-shadow: 0 0 10px 5px var(--nth-4);
+}
+
+main .item:hover .img1:hover {
+    transform: scale(1.2);
+    animation: shadowAnimation 1.5s infinite;
+    opacity: 100%;
+}
+
+main .item:nth-child(4n+1):hover .img1 {
+    animation: scaleAnimation1 1.5s infinite;
+}
+
+main .item:nth-child(4n+2):hover .img1 {
+    animation: scaleAnimation2 1.5s infinite;
+}
+
+main .item:nth-child(4n+3):hover .img1 {
+    animation: scaleAnimation3 1.5s infinite;
+}
+
+main .item:nth-child(4n+4):hover .img1 {
+    animation: scaleAnimation4 1.5s infinite;
+}
+
+.item .img1-click,
+.full-item .img1-click {
+      top: 10px;
+      position: absolute;
+      width: 90px;
+      border-radius: 50%;
+      transition: all 500ms ease;
+      cursor: pointer;
+      z-index: 1;
+      margin: -150px 0 0 0;
+      box-shadow: 0 0 25px 15px #0000004f, 0 0 25px 15px #0000004f inset;
+      border: 2px solid #ffa07a9a;
+      border-radius: 50%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      transform: scale(1);
+}
+
+main .item:hover .img1-click:hover {
+    animation: shadowAnim 2s infinite;
+}
+
+.full-item img {
+    border-radius: 50px 50px 10px 10px;
+    border: 3px solid #ffffff
+}
+
+main .item .mainImg img:hover,
+.full-item .mainImg img:hover {
+    transform: scale(1.03);
+    border:2px solid #000;
+    box-shadow: 0px 11px 17px -5px #2c2c2c;
+    color: #ababab3a;
+    border-radius: 80px 80px 10px 10px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.modal-content .item img {
+    margin: 10px 0 0 0;
+    transition: all 1500ms ease;
+    border: 0px;
+}
+
+.modal-content .item img:hover,
+.modal-content img:hover {
+    transform: scale(1.13);
+    box-shadow: 0px 11px 17px -5px #2c2c2c;
+    color: #ababab3a;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/

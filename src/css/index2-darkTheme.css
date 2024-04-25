@@ -1,9 +1,5 @@
 .darkTheme header .logo {
     color: #ffffff;
-    border-left: 10px solid #ffffff;
-    border-right: 10px solid #ffffff;
-    border-top: 5px solid #ffffff;
-    border-bottom: 5px solid #ffffff;
     background: #00000080;
 }
 
@@ -51,7 +47,7 @@
 }
 
 .darkTheme .trigger {
-    background: #856661;
+    background: #D9C3EA;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
     border-top: 1px solid #ffffff;
@@ -61,13 +57,9 @@
     background: #4b4b4b;
 }
 
-.darkTheme footer {
-    color: #ffffff;
-}
-
 .darkTheme main .item {
     background: #3a3a3a;
-    border: 5px solid #ffffff;
+    border: 1px solid #ffffff;
 }
 
 .darkTheme main .item h2,
@@ -98,29 +90,14 @@
     border-bottom: 5px solid #ffffff;
 }
 
-main .item :nth-child(even) .img1 ,
-.full-item:nth-child(even) .img1 {
-    box-shadow: 0 0 10px 5px #FFA07A, 0 0 10px 5px #ffffff69 inset ;
-}
-
-main .item :nth-child(odd) .img1 ,
-.full-item:nth-child(odd) .img1 {
-    box-shadow: 0 0 10px 5px #e59182, 0 0 10px 5px #ffffff69 inset ;
-}
-
 .darkTheme main .item .img1,
 .darkTheme .full-item .img1 {
-    border-bottom: 3px solid #ffa07a9a;
+    border-bottom: 1px solid #ffa07a9a;
 }
 
 .darkTheme main .item .img1-click,
 .darkTheme .full-item .img1-click {
-    border-bottom: 5px solid #ffa07a9a;
-}
-
-.darkTheme main .item .img1,
-.darkTheme .full-item .img1 {
-    box-shadow: 0 0 10px 5px #ffa07a9a, 0 0 10px 5px #ffffff69 inset ;
+    border-bottom: 2px solid #ffa07a9a;
 }
 
 .darkTheme header .shop-cart {
@@ -237,7 +214,7 @@ main .item :nth-child(odd) .img1 ,
     color: #ffffff;
 }
 
-.darkTheme Footer{
+.darkTheme footer{
     background-color: #4b4b4b;
 }
 
@@ -260,4 +237,23 @@ main .item :nth-child(odd) .img1 ,
 
 .darkTheme .review-button:hover {
     background-color: #6b6b6b;
+}
+
+.darkTheme .categories li:nth-child(2) {
+    background: #d9c3ea;
+}
+
+.darkTheme .categories li:nth-child(3) {
+    background: #ceeac3;
+}
+
+.darkTheme .categories li:nth-child(4) {
+    background: #d9c3ea;
+}
+
+.darkTheme .categories li:nth-child(5) {
+    background: #ceeac3;
+}
+.darkTheme .categories li:nth-child(6) {
+    background: #d9c3ea;
 }

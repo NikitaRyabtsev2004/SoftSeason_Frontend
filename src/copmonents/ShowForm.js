@@ -30,7 +30,7 @@ class FormModals extends Component {
     }
 
     else if (this.checkRequestsCount()) {
-      fetch('http://62.217.182.98:2000/submit', {
+      fetch('http://localhost:2000/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

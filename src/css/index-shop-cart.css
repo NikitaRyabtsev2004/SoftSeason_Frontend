@@ -1,0 +1,183 @@
+header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+    transition: color 1000ms ease;
+    scale: 1.8;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+    color: #64372fc0;
+    transform: scale(1.5)
+}
+
+header .shop-cart {
+    border: 5px solid #000;
+    position: absolute;
+    top: 130px;
+    width: 160px;
+    background: #00000066;
+    border-radius: 55px;
+    animation: slideIn 1.5s forwards;
+    opacity: 0;
+    padding-bottom: 0;
+    z-index: 101;
+    max-height: 400px;
+    overflow-y: auto;
+    color: #ffffff;
+    overflow-x:hidden;
+}
+
+header .shop-cart h2 {
+    font-size: 35px;
+}
+
+header .shop-cart.close {
+    animation: slideOut 1.5s;
+}
+
+header .shop-cart .item {
+    width: 100%;
+    float: left;
+    margin-bottom: 40px;
+    transition: all 0.5s ease;
+    background: #00000091;
+    border-radius: 45px;
+    padding: 10px 0 0 0;
+    box-shadow: 0 0 20px 10px #00000091, 0 0 5px 5px #00000091 inset;
+    animation: slideInOpacity 0.7s;
+    order: 1;
+
+}
+
+header .shop-cart .empty {
+    color: #000000;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    background: #ffffff;
+}
+
+header .shop-cart .empty h2{
+    font-size: 25px;
+    font-weight: 200;
+}
+
+header .shop-cart .item img {
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 20px;
+    margin: 0 10px 20px 10px;
+    transition: all 500ms ease;
+}
+
+header .shop-cart .item img:hover {
+    transform: scale(1.1);
+}
+
+header .shop-cart .item h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0 0 0 10px;
+}
+
+header .shop-cart .item p {
+    color: #326723;
+    font-weight: 600;
+}
+
+header .shop-cart .item .close {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 20px 0 0 0;
+    transition: all 1000ms ease;
+}
+
+header .shop-cart .item .close:hover {
+    transform: scale(1.1);
+}
+
+header .shop-cart .item .close:hover::before,
+header .shop-cart .item .close:hover::after {
+    transition: all 1000ms ease;
+    background: #8a8a8a;
+}
+
+header .shop-cart .item .close::before,
+header .shop-cart .item .close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #ffffff;
+}
+
+header .shop-cart .item .close::before {
+    transform: rotate(45deg);
+}
+
+header .shop-cart .item .close::after {
+    transform: rotate(-45deg);
+}
+
+header .shop-cart .item .close.big {
+    transform: scale(3);
+}
+
+header .shop-cart .item .close.black::before,
+header .shop-cart .item .close.black::after {
+    height: 8px;
+    margin-top: -4px;
+}
+
+header .shop-cart .item .close.heavy::before,
+header .shop-cart .item .close.heavy::after {
+    height: 12px;
+    margin-top: -6px;
+}
+
+header .shop-cart .item .close.rounded::before,
+header .shop-cart .item .close.rounded::after {
+    border-radius: 5px;
+}
+
+header .shop-cart .item .close.pointy::before,
+header .shop-cart .item .close.pointy::after {
+    width: 200%;
+    left: -50%;
+}
+
+header .shop-cart .item .close.blades::before,
+header .shop-cart .item .close.blades::after {
+    border-radius: 5px 0;
+}
+
+header .shop-cart .sum {
+    height: auto;
+    float: left;
+    width: 100%;
+    font-weight: 900;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    border-radius: 20px;
+    font-weight: 400;
+    font-style: normal;
+    animation: slideInOpacity 0.7s;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+    background: #00000091;
+}

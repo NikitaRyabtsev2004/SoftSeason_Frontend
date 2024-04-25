@@ -12,15 +12,19 @@ footer p, footer b {
     align-items: center;
 }
 
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
 .review-form-container {
-    width: 100%; /* Изменено на 100% для адаптивности */
     display: flex;
     flex-direction: column;
-    max-height: 300px;
+    max-height: auto;
+    z-index: 1;
 }
 
 .review-input {
-    width: 100%; /* Изменено на 100% для адаптивности */
+    width: 100%; 
     height: 150px;
     margin-bottom: 10px;
 }
@@ -29,7 +33,7 @@ footer p, footer b {
     height: 250px;
     overflow-y: auto;
     padding: 10px;
-    width: 100%; /* Изменено на 100% для адаптивности */
+    width: 100%; 
 }
 
 .review-display {
@@ -37,7 +41,7 @@ footer p, footer b {
 }
 
 .review-display li {
-    word-wrap: break-word; /* Применяем стиль также к элементам списка */
+    word-wrap: break-word; 
     background: #ffffff;
     padding: 5px;
     margin: 10px 0 0 0 ;
@@ -52,36 +56,17 @@ footer p, footer b {
     letter-spacing: 1px;
 }
 
-.textarea {
-    display: flex;
-    flex-direction: row;
-    word-wrap: break-word; /* Применяем стиль также к элементам списка */
-    background: #ffffff;
-    padding: 5px;
-    margin: 5px 0 0 0 ;
-    color: #000000;
-    font-weight: 500;
-    text-align: left;
-    border: #000000 solid 5px;
-    border-radius: 15px;
-    height: 30px;
-    min-height: 80px;
-    max-height: 140px;
-    width: 100%;
-}
-
 .review-presentation {
-    width: 100%; /* Изменено на 100% для адаптивности */
+    width: 100%; 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 30px 0 0;
-}
-
-@media (max-width: 550px) {
-    .review-display-container, .review-presentation {
-        max-width: 400px; /* Убираем ограничение ширины контейнера */
-    }
+    z-index: 2;
+    color: #000;
+    text-align: center;
+    margin-top: 100px;
+    justify-content: center;
+    width: 95%;
 }
 
 .review-button {
@@ -103,3 +88,26 @@ footer p, footer b {
     white-space: pre;
 }
 
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.textarea {
+    display: flex;
+    flex-direction: row;
+    word-wrap: break-word; 
+    background: #ffffff;
+    padding: 5px;
+    margin: 5px 0 0 0 ;
+    color: #000000;
+    font-weight: 500;
+    text-align: left;
+    border: #000000 solid 5px;
+    border-radius: 15px;
+    height: 30px;
+    min-height: 80px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/

@@ -31,7 +31,7 @@ class LoginModal extends Component {
         event.preventDefault();
         const inputCode = event.target.elements.verifyInput.value;
         if (inputCode === this.state.verifyCode) {
-            fetch('http://62.217.182.98:2000/newLogin', {
+            fetch('http://localhost:2000/newLogin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ class LoginModal extends Component {
     }
 
     verifyCodeSend = () => {
-        fetch('http://62.217.182.98:2000/register', {
+        fetch('http://localhost:2000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ class LoginModal extends Component {
         event.preventDefault();
         const newPassword = event.target.elements.newPassword.value;
         this.setState({ changePassword: false });
-        fetch('http://62.217.182.98:2000/changePassword', {
+        fetch('http://localhost:2000/changePassword', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

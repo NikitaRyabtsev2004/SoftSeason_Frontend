@@ -1,0 +1,624 @@
+:root {
+    --main-item-nth:#ffffff;
+    --main-full-item-b: #ffffff;
+    --main-full-item-b-border: #ffffff;
+    --logo:#ffffff;
+    --ul-nav-li:#ffffff;
+    --trigger:#ffffff;
+    --cart:#ffffff;
+    --img1:#ffffff;
+    --item-add-to-cart:#ffffff;
+    --wrapper:#ffffff;
+    --nth-1:#D9C3EA;
+    --nth-2:#ffe6d6;
+    --nth-3:#E8EAC3;
+    --nth-4:#CEEAC3;
+}
+
+::-webkit-scrollbar {
+    background-color: rgb(33, 2, 17);
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #dcbde2;
+    border-radius: 5px
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #dcbde2 rgb(33, 2, 17);
+    margin: 0;
+    padding: 0;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+body {
+
+    color: #222;
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    overflow-x: hidden;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+}
+
+.wrapper {
+    background: #ffffff;
+    position: relative;
+    width: auto;
+    margin: 0px auto;
+    min-height: 720px;
+    transition: all 500ms ease;
+    margin: auto;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-height: 120px;
+    background-color: #80808056;
+    border-radius: 0px 0px 20px 20px;
+    z-index: 102;
+    transition: all 500ms ease;
+    animation: slideInHeader 2s forwards;
+    border-bottom: solid #000; 
+}
+
+.upHeader {
+    display: flex;
+    max-height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    left: auto;
+}
+
+header:hover {
+    transform: scale(1.005);
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+header .logo {
+    background: #ffffff93;
+    transition: all 500ms ease;
+    padding: 5px 10px;
+    border-left: 10px solid #d9c3ea85;
+    border-right: 10px solid #d9c3ea85;
+    border-top: 5px solid #d9c3ea85;
+    border-bottom: 5px solid #d9c3ea85 ;
+    font-weight: 400;
+    font-size: 40px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #000000;
+    border-radius: 20px;
+    width: auto;
+    animation: borderColorAnimation1 5s infinite linear; 
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+header ul.nav {
+    float: right;
+    list-style: none;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+header ul.nav li {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    opacity: 1; 
+    color: #FFFFFF;
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    background: #FFDAB9;
+    border-radius: 20px;
+    padding: 10px 20px; 
+    text-align: center;
+    letter-spacing: 1px;
+    border: 1px #000000 solid;
+}
+
+header ul.nav li:hover {
+    opacity: 0.5; 
+}
+
+ul.nav {
+    list-style-type: none; 
+}
+
+ul.nav li:nth-child(1) {
+    background: #ceeac390; 
+    color: #888888;
+}
+
+ul.nav li:nth-child(2) {
+    background: #d9c3ea83;
+    color: #888888;
+}
+
+ul.nav li:nth-child(3) {
+    background: #ceeac390;
+    color: #888888;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+.cart-container{
+    color: #e59182;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+.buy {
+    font-size: 30px;
+    color: #ffffffb5;
+    font-style: normal;
+    animation: slideInOpacity 0.7s;
+    cursor: pointer;
+    transition: all 1000ms ease;
+    letter-spacing: -1px;
+    text-align: center;
+    order: 3;
+    float: left;
+    border-radius: 25px;
+    background: #00000091;
+
+}
+
+.buy:hover {
+    color: rgb(63, 63, 63);
+    background: #aaaaaa;
+    box-shadow: 0 0 10px 10px #5c5c5c86, 0 0 10px 10px #5c5c5c86 inset;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+.closeButton {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    background: #ca5252;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 500ms ease;
+    margin: 0 0 750px 0;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+.full-item {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    z-index: 103;
+    animation: slideInFullItem 1s forwards;
+}
+
+.full-item>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    border-radius: 9px;
+    background: #fff;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    top: 30px;
+    position: relative;
+    z-index: 101;
+    opacity: 90%;
+    animation: slideIn 2s forwards;
+    transition: all 1000ms ease;
+}
+
+main .item {
+    opacity: 95%;
+    width: 25.5%;
+    margin-bottom: 50px;
+    background: #b8b8b8;
+    position: relative;
+    padding-bottom: 20px;
+    border-radius: 90px 90px 30px 30px;
+    border: 1px solid #000000;
+    transition: all 500ms ease;
+}
+
+main .item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 90px 15px #2c2c2c;
+    opacity: 100%;
+}
+
+main h2,
+.full-item h2,
+main p {
+    margin: 20px 0 10px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: normal;
+}
+
+.full-item h2 {
+    margin: 10px 0 10px 0px;
+    font-size: 40px;
+}
+
+.full-item p {
+    margin: 10px 0 10px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main b,
+.full-item b {
+    margin: 0 10px 0 10px;
+    border-radius: 20px;
+    border-width: 5px; 
+    color: var(--main-full-item-b);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 38px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    letter-spacing: -2px;
+}
+
+main .item:nth-child(4n+1) b {
+    border: 5px #D9C3EA solid;
+}
+
+main .item:nth-child(4n+2) b {
+    border: 5px #ffe6d6 solid;
+}
+
+main .item:nth-child(4n+3) b {
+    border: 5px #E8EAC3 solid;
+}
+
+main .item:nth-child(4n+4) b {
+    border: 5px #CEEAC3 solid;
+}
+
+main b .full-item b {
+    color: #5fa35f;
+}
+
+/*-----------------------------------------------------*/
+
+.full-item .previous {
+    background: #ffffff7e;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #000000;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 500ms ease;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.full-item .next {
+    background: #ffffff7e;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #000000;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 500ms ease;
+    margin-bottom: 10px; 
+}
+
+.full-item .next-previous {
+    margin-top:-50px;
+    position: absolute;
+    display: flex; 
+}
+
+.full-item .previous {
+    margin-right: 10px; 
+}
+
+/*----------------------------------------------------*/
+
+main .add-to-cart,
+.full-item .add-to-cart {
+    position: absolute;
+    right: 20px;
+    margin: -54px -10px 0 0 ;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+    transition: all 500ms ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.item:nth-child(4n+1) .add-to-cart,
+.item:nth-child(4n+1) .add-to-cart {
+    background:#D9C3EA;
+}
+
+.item:nth-child(4n+2) .add-to-cart,
+.item:nth-child(4n+2) .add-to-cart {
+    background: #ffe6d6 ;
+}
+
+.item:nth-child(4n+3).add-to-cart ,
+.item:nth-child(4n+3) .add-to-cart {
+    background:#E8EAC3 ;
+}
+
+.item:nth-child(4n+4) .add-to-cart,
+.item:nth-child(4n+4) .add-to-cart {
+    background: #CEEAC3 ;
+}
+
+.full-item .add-to-cart{
+    margin: -50px 20px 20px 20px;
+}
+
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
+    transform: scale(1.1) ;
+    background: #595959;
+    font-size: 35px;
+    border-radius: 20px;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+.button-88 {
+    position: relative;
+    --b: 3px;
+    --s: .45em;
+    --color: #ffffff;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-items: center;
+    text-align: center;
+    margin: 0 120px 10px 120px;
+}
+
+.button-88:hover,
+.button-88:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-88:active {
+    background: var(--color);
+    color: #fff;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.animated-text {
+    font-size: 30px;
+    animation: lineSlide 1s linear forwards;
+    margin: 10px 0 10px 0px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+}
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*server.css*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.modal-content button {
+    background-color: #506839;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #547e2e;
+    ;
+}
+
+.modal-content .item {
+    display: flex;
+    flex-direction: row;
+    width: 110px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    background: #00000060;
+    box-shadow: 0px 0px 10px 10px #0000002e, 0px 0px 10px 10px #08080847 inset;
+    padding: 0 20px 0 20px;
+    border-radius: 20px;
+}
+
+
+.modal-content h2 {
+    margin: 0 0 0 -150px;
+}
+
+.modal-content p {
+    margin: 0;
+}
+
+.modal-content b {
+    margin: 10px 0 0 25px;
+    border: none;
+}
+
+.modal-content .item .close .heavy::before,
+.modal-content .item .close .heavy::after {
+    height: 12px;
+    margin-top: -6px;
+}
+
+.modal-content .item .close .rounded::before,
+.modal-content .item .close .rounded::after {
+    border-radius: 5px;
+}
+
+.modal-content .sum {
+    width: 100%;
+    font-weight: 900;
+    font-size: 25px;
+    color: #1a3912b5;
+    border-radius: 20px;
+    font-weight: 400;
+    font-style: normal;
+    animation: slideInOpacity 0.7s;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*server.css*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.order-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.changePasswordButton {
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.changePasswordButton:hover {
+    color: #244177;
+    transform: scale(1.05) translateX(2px);
+}
+
+.changePasswordForm {
+    transition: all 500ms ease;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.login-form {
+    transition: all 500ms ease;
+}

@@ -65,7 +65,7 @@ class Header extends Component {
                             <ul style={{ userSelect: "none" }} className='nav'>
                                 {this.props.isLoggedIn ? (
                                     <>
-                                        <li>{this.state.email}</li>
+                                        <li>{localStorage.getItem('email')}</li>
                                     </>
                                 ) : (
                                     <li onClick={this.props.openLoginModal}>Войти</li>
