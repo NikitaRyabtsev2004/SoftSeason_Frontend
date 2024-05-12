@@ -13,8 +13,8 @@ header .shop-cart-button.active {
 
 header .shop-cart {
     border: 5px solid #000;
-    position: absolute;
-    top: 130px;
+    position:absolute;
+    top: 180px;
     width: 160px;
     background: #00000066;
     border-radius: 55px;
@@ -101,7 +101,7 @@ header .shop-cart .item .close {
 }
 
 header .shop-cart .item .close:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 header .shop-cart .item .close:hover::before,
@@ -120,6 +120,7 @@ header .shop-cart .item .close::after {
     left: 0;
     margin-top: -1px;
     background: #ffffff;
+    transition: all 500ms ease;
 }
 
 header .shop-cart .item .close::before {
@@ -128,6 +129,14 @@ header .shop-cart .item .close::before {
 
 header .shop-cart .item .close::after {
     transform: rotate(-45deg);
+}
+
+header .shop-cart .item .close:hover::before {
+    transform: rotate(135deg);
+}
+
+header .shop-cart .item .close:hover::after {
+    transform: rotate(-135deg);
 }
 
 header .shop-cart .item .close.big {

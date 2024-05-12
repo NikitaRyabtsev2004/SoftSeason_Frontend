@@ -50,7 +50,6 @@ export class Footer extends Component {
             .then(data => {
                 if (data.status === 200) {
                     alert('Отзыв отправлен!');
-                    // Опционально: обновить отображение отзывов после отправки нового отзыва
                     this.setState({ reviewText: '' });
                     this.setState({ reviewDate });
                     this.fetchReviews();

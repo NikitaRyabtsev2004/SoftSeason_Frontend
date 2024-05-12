@@ -14,7 +14,7 @@ export class Order extends Component {
                 <div className='item' id={this.props.item.id}>
                     <h2>{this.props.item.title}</h2>
                     <img src={"./img/" + this.props.item.img[0]} alt={this.props.item.title} />
-                    <b>{this.props.item.price}$</b>
+                    <b>{this.props.item.price} ₽</b>
                     <span className="close rounded heavy" onClick={() => this.animateAndDelete(this.props.item.id)}></span>
                 </div>
             </>

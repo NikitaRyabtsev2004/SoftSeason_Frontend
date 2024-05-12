@@ -22,7 +22,7 @@
 
 main .item img{
     width: 100%;
-    border-radius: 90px 90px 0 0;
+    border-radius: 80px 80px 0 0;
     transition: all 500ms ease;
     cursor: pointer;
     box-shadow: 0 0 20px 10px #ffffff inset;
@@ -31,7 +31,7 @@ main .item img{
 }
 .full-item img {
     width: 100%;
-    border-radius: 90px 90px 0 0;
+    border-radius: 80px 80px 0 0;
     transition: all 500ms ease;
     cursor: pointer;
     box-shadow: 0 0 20px 10px #ffffff inset;
@@ -43,30 +43,60 @@ main .item img{
 main .item .img1,
 .full-item .img1 {
     top: 1px;
-    position: absolute;
     width: 60px;
     border-radius: 50%;
     transition: all 500ms ease;
     cursor: pointer;
-    border: 3px solid #ffa07a9a;
     z-index: 1;
-    margin: -10px 0 0 5px;
-
+    position: initial ;
+    margin: -45px 0 0 0;
 }
 
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
 main .item:nth-child(4n+1) .img1 {
+    border: 3px solid var(--nth-1);
     box-shadow: 0 0 10px 5px var(--nth-1);
 }
 
 main .item:nth-child(4n+2) .img1 {
+    border: 3px solid var(--nth-2);
     box-shadow: 0 0 10px 5px var(--nth-2);
 }
 
 main .item:nth-child(4n+3) .img1 {
+    border: 3px solid var(--nth-3);
     box-shadow: 0 0 10px 5px var(--nth-3);
 }
 
 main .item:nth-child(4n+4) .img1 {
+    border: 3px solid var(--nth-4);
+    box-shadow: 0 0 10px 5px var(--nth-4);
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+main .item:nth-child(4n+1) .img1-click {
+    border: 3px solid var(--nth-1);
+    box-shadow: 0 0 10px 5px var(--nth-1);
+}
+
+main .item:nth-child(4n+2) .img1-click {
+    border: 3px solid var(--nth-2);
+    box-shadow: 0 0 10px 5px var(--nth-2);
+}
+
+main .item:nth-child(4n+3) .img1-click {
+    border: 3px solid var(--nth-3);
+    box-shadow: 0 0 10px 5px var(--nth-3);
+}
+
+main .item:nth-child(4n+4) .img1-click {
+    border: 3px solid var(--nth-4);
     box-shadow: 0 0 10px 5px var(--nth-4);
 }
 
@@ -75,6 +105,10 @@ main .item:hover .img1:hover {
     animation: shadowAnimation 1.5s infinite;
     opacity: 100%;
 }
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
 
 main .item:nth-child(4n+1):hover .img1 {
     animation: scaleAnimation1 1.5s infinite;
@@ -92,10 +126,34 @@ main .item:nth-child(4n+4):hover .img1 {
     animation: scaleAnimation4 1.5s infinite;
 }
 
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+main .item:nth-child(4n+1) .img {
+    border-bottom: 5px solid var(--nth-1);
+}
+
+main .item:nth-child(4n+2) .img {
+    border-bottom: 5px solid var(--nth-2);
+}
+
+main .item:nth-child(4n+3) .img {
+    border-bottom: 5px solid var(--nth-3);
+}
+
+main .item:nth-child(4n+4) .img {
+    border-bottom: 5px solid var(--nth-4);
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
 .item .img1-click,
 .full-item .img1-click {
       top: 10px;
-      position: absolute;
+      position: relative;
       width: 90px;
       border-radius: 50%;
       transition: all 500ms ease;
@@ -108,7 +166,7 @@ main .item:nth-child(4n+4):hover .img1 {
       text-align: center;
       justify-content: center;
       align-items: center;
-      transform: scale(1);
+      transform: scale(2);
 }
 
 main .item:hover .img1-click:hover {
@@ -117,14 +175,11 @@ main .item:hover .img1-click:hover {
 
 .full-item img {
     border-radius: 50px 50px 10px 10px;
-    border: 3px solid #ffffff
 }
 
 main .item .mainImg img:hover,
 .full-item .mainImg img:hover {
     transform: scale(1.03);
-    border:2px solid #000;
-    box-shadow: 0px 11px 17px -5px #2c2c2c;
     color: #ababab3a;
     border-radius: 80px 80px 10px 10px;
 }
@@ -133,17 +188,36 @@ main .item .mainImg img:hover,
 
 /*//////////////////////////////////////////////////////////////////////////*/
 
-.modal-content .item img {
-    margin: 10px 0 0 0;
-    transition: all 1500ms ease;
-    border: 0px;
+main .item .mainImg img:hover:nth-child(4n+1),
+.full-item .mainImg img:hover:nth-child(4n+1) {
+    border:2px solid var(--nth-1);
 }
+
+main .item .mainImg img:hover:nth-child(4n+2),
+.full-item .mainImg img:hover:nth-child(4n+2) {
+    border:2px solid var(--nth-2);
+}
+
+main .item .mainImg img:hover:nth-child(4n+3),
+.full-item .mainImg img:hover:nth-child(4n+3) {
+    border:2px solid var(--nth-3);
+}
+
+main .item .mainImg img:hover:nth-child(4n+4),
+.full-item .mainImg img:hover:nth-child(4n+4) {
+    border:2px solid var(--nth-4);
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
 
 .modal-content .item img:hover,
 .modal-content img:hover {
     transform: scale(1.13);
     box-shadow: 0px 11px 17px -5px #2c2c2c;
     color: #ababab3a;
+    cursor: pointer;
 }
 
 /*//////////////////////////////////////////////////////////////////////////*/

@@ -17,7 +17,7 @@ class Item extends Component {
 
     render() {
         return (
-            <div className='item'>
+            <div className='item' style={{ position: "relative" }}>
                 <div className='image-container'>
                     <div className='mainImg'>
                         <LazyLoadImage
@@ -35,9 +35,8 @@ class Item extends Component {
                         onClick={this.handleImageClick}
                     />
                     <h2>{this.props.item.title}</h2>
-                    <p>{this.props.item.desc}</p>
-                    <b>{this.props.item.price}$</b>
-                    <div className='add-to-cart' onClick={() => { alert(`${this.props.item.title} был добавлен в корзину `); this.props.onAdd(this.props.item); }}>+</div>
+                    <b>{this.props.item.price} ₽</b>
+                    <div className='add-to-cart' onClick={() => { alert(`${this.props.item.title} был добавлен в корзину `); this.props.onAdd(this.props.item); }}>＋</div>
                 </div>
             </div >
         );

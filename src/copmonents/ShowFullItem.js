@@ -91,17 +91,17 @@ export class ShowFullItem extends Component {
           </div>
           {item.img.length > 1 && (
             <div className='next-previous'>
-              <div className='previous' onClick={this.prevImage}>←</div>
-              <div className='next' onClick={this.nextImage}>→</div>
+              <div className='previous' style={{ fontStyle: 'normal' }} onClick={this.prevImage}>&#5130;</div>
+              <div className='next' style={{ fontStyle: 'normal' }} onClick={this.nextImage}>&#5125;</div>
             </div>
           )}
           <h2>{item.title}</h2>
           <div>
             <ShowText textToShow={item.desc} />
           </div>
-          <b>{item.price}$</b>
-          <div className='closeButton' onClick={() => this.props.onShowItem(item)}>х</div>
-          <div className='add-to-cart' onClick={() => this.props.onAdd(item)}>+</div>
+          <b>{item.price} ₽</b>
+          <div className='closeButton' onClick={() => this.props.onShowItem(item)}>✖</div>
+          <div className='add-to-cart' onClick={() => this.props.onAdd(item)}>＋</div>
         </div>
       </div>
     )

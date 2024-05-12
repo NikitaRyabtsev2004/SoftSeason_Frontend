@@ -54,50 +54,180 @@
 
 /*//////////////////////////////////////////////////////////////////////////*/
 
-.presentation {
-    height: 700px;
+.cat {
+    height: 160px;
     background-position: center;
     background-size: cover;
     background-blend-mode: multiply;
-    background-image: url(../img/bg1.jpg);
+    background-image: url(../img/cat1.gif);
     position: sticky;
+    z-index: 103;
+    margin-top: -20px;
+    margin-bottom: -90px;
+    animation: slideInPresentation 3s forwards;
+    justify-content: center;
+    align-items: center;
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+.top-presentation .text-1 {
+    display: flex;
+    font-weight: 100;
+    transition: all 500ms ease;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: auto;
+    justify-content:center;
+    animation: text-1-animation 3s forwards;
+    margin-bottom: 60px;
+}
+
+.top-presentation .text-1-1 {
+    display: flex;
+    font-weight: 100;
+    transition: all 500ms ease;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: auto;
+    justify-content:center;
+    animation: text-1-animation 3s forwards;
     margin-bottom: 100px;
-    top: -750px;
+}
+
+.top-presentation {
+    margin-top: 10px;
+}
+
+@keyframes logo-bottom-animation {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes text-1-animation {
+    0% {
+        transform: translateX(-900px);
+        opacity: 30%;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes text-2-animation {
+    0% {
+        transform: translateX(900px);
+        opacity: 30%;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top-presentation .text-all {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .top-presentation .text-all {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .top-presentation {
+        height: 850px;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .top-presentation {
+        height: 720px;
+    }
+}
+
+.top-presentation .text-2 {
+    margin-top: 20px;
+    font-weight: 100;
+    transition: all 500ms ease;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: auto;
+    max-height: 100px;
+    justify-content:center;
+    animation: text-2-animation 3s forwards;
+}
+
+.top-presentation .text-2-1 {
+    font-weight: 100;
+    transition: all 500ms ease;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: auto;
+    max-height: 100px;
+    justify-content:center;
+    animation: text-2-animation 3s forwards;
+    border-bottom: 5px solid #000;
+}
+
+/*------------------*/
+
+.bottom-presentation {
+    height:500px;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-image: url(../img/bg13.gif);
+    position: sticky;
+    position: relative;
     border-radius: 50px;
     z-index: 100;
-    margin-top: 70px;
+    margin-top: 0px;
+    margin-right:20px;
+    margin-left:40px;
     animation: slideInPresentation 3s forwards;
     justify-content: center;
     align-items: center;
     animation: colorAnim1 4s infinite;
-}
 
-header .presentation::after {
-    content: 'Текст-1';
+}
+/*
+.bottom-presentation::before {
+    content: 'Вы долистали до конца';
     position: absolute;
-    top: 100px;
+    top: 50px; 
     left: 50px;
-    width: 300px;
-    font-size: 40px;
-    color: #fff;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+    font-size: 20px; 
+    color: #000000; 
+    font-weight: 400;
 }
 
-header .presentation::before {
-    content: 'Текст-2';
+.bottom-presentation::after {
+    content: 'Ниже можно ознакомиться с правовой информацией';
+    
     position: absolute;
-    top: 250px;
-    left: 50px;
-    width: 300px;
-    font-size: 30px;
-    color: #fff;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+    bottom: 50px;
+    right: 50px; 
+    font-size: 20px; 
+    color: #000000; 
+    font-weight: 400;
 }
 
+*/
 /*//////////////////////////////////////////////////////////////////////////*/
 
 /*//////////////////////////////////////////////////////////////////////////*/

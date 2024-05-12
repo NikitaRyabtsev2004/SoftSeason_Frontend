@@ -262,7 +262,36 @@
     }
 }
 
+@media screen and (min-width: 550px) and (max-width: 860px) {
+    header ul.nav li {
+        font-size: 17px;
+        font-weight: 900;
+        padding: 5px;
+        margin-bottom: 1px;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 730px) {
+    .trigger-background {
+        top: 110px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main .item {
+        width: 35.5%
+    }
+}
+
 @media screen and (max-width: 550px) {
+    .modal-content .item img {
+        margin: 10px 0 0 50px;
+        transition: all 1500ms ease;
+        border: 0px;
+    }
+    .trigger-background {
+        top: 50px;
+    }
     .modal-content .item h2 {
         margin: 0 0 0 -110px;
     }
@@ -274,10 +303,10 @@
         top: 5px;
     }
     .button-88 {
-        margin: 0 0 0 -20px;
+        margin: 0 0 0 20px;
     }
     header .shop-cart {
-        margin: 0 0 0 15px;
+        margin: 20px 0 0 0px;
     }
     header .shop-cart .item {
         border-radius: 45px 45px 0 0;
@@ -290,9 +319,6 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-    }
-    header .shop-cart .item b{
-        margin: 0 0 0 40px ;
     }
     header .shop-cart .item .close {
         margin: 0 0 0 40px;
@@ -317,13 +343,16 @@
     header ul.nav li{
         padding: 1px;
         margin-bottom: 1px;
+        font-size: 14px;
+        font-weight: 900;
+    }
+    .categories li {
+        margin: 0 0 10px 5%;
     }
     .buy {
-        font-size: 18px;
-        width: 65px;
-        justify-content: center;
-        align-items: center;
+        font-size: 25px;
         padding: 0 0 0 10px;
+        height: 40px;
     }
     header .shop-cart-button {
         margin: 30px -10px 0 0 ;
@@ -348,20 +377,41 @@
         font-size: 25px;
     }
     .cart-container{
-        margin-right: 30px;
-        margin-top: 20px;
+        margin-right: 20px;
+        margin-left: -20px;
+        margin-top: -10px;
+        transform: scale(0.8);
     }
     .payButton{
         margin: 30px 0 0 50px;
     }
+    .modal-content .item img {
+        margin: 10px 0 0 10px;
+        transition: all 1500ms ease;
+        border: 0px;
+    }
 }
 
 @media screen and (min-width: 550px) {
+    .modal-content .item img {
+        margin: 10px 0 0 50px;
+        transition: all 1500ms ease;
+        border: 0px;
+    }
+    .categories li {
+        margin: 0 0 10px 20%;
+    }
+    .trigger-background {
+        top: 90px;
+    }
     .payButton{
         margin: -20px 0 0 200px;
     }
-    .modal-content button {
+    .modal-content .login-form button {
         margin: 50px 0 0 50px;
+    }
+    .modal-content .review-button button {
+        margin: 0 0 0 0;
     }
     .modal-content .sum {
         font-size: 20px;
@@ -374,7 +424,7 @@
         margin-left: auto;
     }
     .modal-content .item {
-        margin: 0px 0px 10px 140px;
+        margin: 0px 0px 10px 200px;
     }
     header .shop-cart {
         left: auto;
@@ -579,5 +629,151 @@
     100% {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@keyframes radialGradientAnim {
+    0% {
+        background: linear-gradient(to right,
+        #f49ac2 0%,
+        #f49ac2 16.67%,
+        #f6bca4 33.33%,
+        #fae08b 50%,
+        #d8f98b 66.67%,
+        #9ef3e9 83.33%,
+        #b39bf9 100%
+    );
+    }
+    8% {
+        background: linear-gradient(to right,
+        #b39bf9 0%,
+        #f49ac2 16.67%,
+        #f49ac2 33.33%,
+        #f6bca4 50%,
+        #fae08b 66.67%,
+        #d8f98b 83.33%,
+        #9ef3e9 100%
+    );
+    }
+    16% {
+        background: linear-gradient(to right, 
+        #9ef3e9 0%,
+        #b39bf9 16.67%,
+        #f49ac2 33.33%,
+        #f49ac2 50%,
+        #f6bca4 66.67%,
+        #fae08b 83.33%,
+        #d8f98b 100%
+    );
+    }
+    24% {
+        background: linear-gradient(to right, 
+        #d8f98b 0%,
+        #9ef3e9 16.67%,
+        #b39bf9 33.33%,
+        #f49ac2 50%,
+        #f49ac2 66.67%,
+        #f6bca4 83.33%,
+        #fae08b 100%
+    );
+    }
+    32% {
+        background: linear-gradient(to right, 
+        #fae08b 0%,
+        #d8f98b 16.67%,
+        #9ef3e9 33.33%,
+        #b39bf9 50%,
+        #f49ac2 66.67%,
+        #f49ac2 83.33%,
+        #f6bca4 100%
+    );
+    }
+    40% {
+        background: linear-gradient(to right,
+        #f6bca4 0%,
+        #fae08b 16.67%,
+        #d8f98b 33.33%,
+        #9ef3e9 50%,
+        #b39bf9 66.67%,
+        #f49ac2 83.33%,
+        #f49ac2 100%
+    );
+    }
+    49% {
+        background: linear-gradient(to right,
+        #f49ac2 0%,
+        #f6bca4 16.67%,
+        #fae08b 33.33%,
+        #d8f98b 50%,
+        #9ef3e9 66.67%,
+        #b39bf9 83.33%,
+        #f49ac2 100%
+    );
+    }
+    57% {
+        background: linear-gradient(to right,
+        #f6bca4 0%,
+        #fae08b 16.67%,
+        #d8f98b 33.33%,
+        #9ef3e9 50%,
+        #b39bf9 66.67%,
+        #f49ac2 83.33%,
+        #f49ac2 100%
+    );
+    }
+    65% {
+        background: linear-gradient(to right, 
+        #fae08b 0%,
+        #d8f98b 16.67%,
+        #9ef3e9 33.33%,
+        #b39bf9 50%,
+        #f49ac2 66.67%,
+        #f49ac2 83.33%,
+        #f6bca4 100%
+    );
+    }
+    73% {
+        background: linear-gradient(to right, 
+        #d8f98b 0%,
+        #9ef3e9 16.67%,
+        #b39bf9 33.33%,
+        #f49ac2 50%,
+        #f49ac2 66.67%,
+        #f6bca4 83.33%,
+        #fae08b 100%
+    );
+    }
+    82% {
+        background: linear-gradient(to right, 
+        #9ef3e9 0%,
+        #b39bf9 16.67%,
+        #f49ac2 33.33%,
+        #f49ac2 50%,
+        #f6bca4 66.67%,
+        #fae08b 83.33%,
+        #d8f98b 100%
+    );
+    }
+    90% {
+        background: linear-gradient(to right,
+        #b39bf9 0%,
+        #f49ac2 16.67%,
+        #f49ac2 33.33%,
+        #f6bca4 50%,
+        #fae08b 66.67%,
+        #d8f98b 83.33%,
+        #9ef3e9 100%
+    );
+    }
+    100% {
+        background: linear-gradient(to right,
+        #f49ac2 0%,
+        #f49ac2 16.67%,
+        #f6bca4 33.33%,
+        #fae08b 50%,
+        #d8f98b 66.67%,
+        #9ef3e9 83.33%,
+        #b39bf9 100%
+    );
     }
 }

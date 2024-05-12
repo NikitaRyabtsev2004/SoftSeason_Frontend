@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
-
+import Review from "./Review.js";
+import category from '../source/CategoryData.js';
+import material from '../source/MaterialData.js';
+import color from '../source/ColorData.js';
 export class Categories extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isOpen: false,
-            categories: [
+            isOpenReview: false,
+            categoriesAll: [
                 {
                     key: 'all',
                     name: 'Все'
-                },
-                {
-                    key: 'c1',
-                    name: 'Категория-1'
-                },
-                {
-                    key: 'c2',
-                    name: 'Категория-2'
-                },
-                {
-                    key: 'c3',
-                    name: 'Категория-3'
-                },
-                {
-                    key: 'c4',
-                    name: 'Категория-4'
-                },
+                }
             ],
+            categoriesCloth: [...category.slice(1, 11).map((cat, index) => ({
+                key: cat,
+                name: category[index + 1]
+            }))],
+            categoriesMaterial: [...material.slice(1, 11).map((dog, index) => ({
+                key: dog,
+                name: material[index + 1]
+            }))],
+            categoriesColor: [...color.slice(1, 14).map((cow, index) => ({
+                key: cow,
+                name: color[index + 1]
+            }))],
             ip: '',
         };
     }
+
 
     handleFormOpen = () => {
         this.setState({ isOpen: true });
@@ -39,27 +40,83 @@ export class Categories extends Component {
         this.setState({ isOpen: false });
     };
 
+    handleFormOpenReview = () => {
+        this.setState({ isOpenReview: true });
+    };
+
+    handleFormCloseReview = () => {
+        this.setState({ isOpenReview: false });
+    };
+
     render() {
         const { isOpen } = this.state;
+        const { isOpenReview } = this.state;
         return (
             <>
                 {isOpen && (
                     <div className="full-item">
                         <div className="modal-content">
                             <div className="categories">
-                                <o style={{ position: "relative", display: "block" }}>Категории товаров 1</o>
-                                {this.state.categories.map(el => (
 
-                                    <li key={el.key} onClick={() => this.props.chooseCategory(el.key)}>{el.name}</li>
+                                {/*1*/}
+                                <div className='liDiv'>
+                                    <o style={{ position: "relative", display: "block" }}>Категории товаров</o>
+                                    {this.state.categoriesAll.map(el => (
+                                        <li className="liAll" key={el.key} onClick={() => this.props.chooseCategory(el.key)}>
+                                            {el.name}
+                                        </li>
+                                    ))}
+                                </div>
 
-                                ))}
+                                {/*2*/}
+                                <div className='liDiv'>
+                                    <o style={{ position: "relative", display: "block" }}>Одежда</o>
+                                    {this.state.categoriesCloth.map(el => (
+                                        <li className="liCloth" key={el.key} onClick={() => this.props.chooseCategory(el.key)}>
+                                            {el.name}
+                                        </li>
+                                    ))}
+                                </div>
+
+                                {/*3*/}
+                                <div className='liDiv'>
+                                    <o style={{ position: "relative", display: "block" }}>Материалы</o>
+                                    {this.state.categoriesMaterial.map(el => (
+                                        <li className="liMaterial" key={el.key} onClick={() => this.props.chooseCategory(el.key)}>
+                                            {el.name}
+                                        </li>
+                                    ))}
+                                </div>
+
+                                {/*3*/}
+                                <div className='liDiv'>
+                                    <o style={{ position: "relative", display: "block" }}>Материалы</o>
+                                    {this.state.categoriesColor.map(el => (
+                                        <li className="liColor" key={el.key} onClick={() => this.props.chooseCategory(el.key)}>
+                                            {el.name}
+                                        </li>
+                                    ))}
+                                </div>
+                                {/*-*/}
                             </div>
-                            <div className='closeButton' onClick={this.handleFormClose}>hide</div>
+                            <div className='closeButton' onClick={this.handleFormClose}>✖</div>
+                        </div>
+                    </div>
+                )}
+
+                {isOpenReview && (
+                    <div className="full-item">
+                        <div className='review'>
+                            <div className="modal-content">
+                                <Review />
+                                <div className='closeButton' onClick={this.handleFormCloseReview}>✖</div>
+                            </div>
                         </div>
                     </div>
                 )}
                 <div className='trigger-background'>
                     <div className='trigger' onClick={this.handleFormOpen} >Отсортировать</div>
+                    <div className='trigger' onClick={this.handleFormOpenReview}>Отзывы</div>
                 </div >
             </>
         );

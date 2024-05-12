@@ -20,6 +20,12 @@ class Header extends Component {
         }));
     }
 
+    handleScroll = () => {
+        if (this.state.cartOpen === true) {
+            this.setState({ cartOpen: false })
+        }
+    }
+
     render() {
         const showOrders = (props) => {
             let sum = 0;
@@ -30,7 +36,7 @@ class Header extends Component {
                         {props.orders.map(el => (
                             <Order onDelete={props.onDelete} key={el.id} item={el} />
                         ))}
-                        <p className="sum">Сумма: {new Intl.NumberFormat().format(sum)}$</p>
+                        <p className="sum">Сумма: {new Intl.NumberFormat().format(sum)} ₽</p>
                         <div style={{ userSelect: "none" }} className='buy' onClick={this.props.handleFormOpen}>Оформить заказ</div>
                     </div>
                 </div>
@@ -50,9 +56,9 @@ class Header extends Component {
                 <header>
                     <div className='upHeader' >
                         <span style={{ userSelect: "none" }} className='logo'>SoftSeason</span>
-                        <div style={{ display: "flex", justifyContent: "" }}>
+                        <div style={{ display: "flex", alignItems: "center", marginLeft: "30px", justifyContent: "" }}>
                             <div style={{ userSelect: "none" }} className="cart-container">
-                                <FaShoppingCart onClick={() => { this.setState({ cartOpen: !this.state.cartOpen }); this.props.toggleCartVisibility(); }} className={`shop-cart-button ${this.state.cartOpen && 'active'}`} />
+                                <FaShoppingCart onClick={() => { this.setState({ cartOpen: !this.state.cartOpen }); console.log(this.state.cartOpen); this.props.toggleCartVisibility(); }} className={`shop-cart-button ${this.state.cartOpen && 'active'}`} />
                                 {this.state.cartOpen !== null && (
                                     <div class="shop-cart-container">
                                         <div className={`shop-cart ${this.state.cartOpen ? '' : 'close'}`}>
@@ -63,15 +69,15 @@ class Header extends Component {
                             </div>
 
                             <ul style={{ userSelect: "none" }} className='nav'>
+                                <li onClick={this.props.handleDarkTheme}>Поменять тему</li>
+                                <li onClick={this.props.handleLogout}>Выйти</li>
                                 {this.props.isLoggedIn ? (
                                     <>
                                         <li>{localStorage.getItem('email')}</li>
                                     </>
                                 ) : (
-                                    <li onClick={this.props.openLoginModal}>Войти</li>
+                                    <li onClick={this.props.openLoginModal}>Войти | Зарегестрироваться</li>
                                 )}
-                                <li onClick={this.props.handleLogout}>Выйти</li>
-                                <li onClick={this.props.handleDarkTheme}>Поменять тему</li>
                             </ul>
                         </div>
                     </div>

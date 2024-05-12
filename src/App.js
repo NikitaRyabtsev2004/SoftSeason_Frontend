@@ -6,10 +6,11 @@ import Categories from "./copmonents/Categories.js";
 import ShowFullItem from "./copmonents/ShowFullItem.js";
 import FormModal from "./copmonents/ShowForm.js";
 import LoginModal from "./copmonents/LoginForm.js";
-import items from "./copmonents/ProductData.js";
+import items from "./source/ProductData.js";
 class App extends React.Component {
   constructor(props) {
     super(props)
+    this.headerRef = React.createRef();
     const isLoggedIn = localStorage.getItem('isLogin') === 'true';
     const email = localStorage.getItem('email');
     const isDark = localStorage.getItem('isDark') === 'true';
@@ -27,6 +28,7 @@ class App extends React.Component {
       password: '',
       isLoggedIn: isLoggedIn,
       isDark: isDark,
+      isOpenFooter: false,
     }
     this.state.currentItems = this.state.items
     this.addToOrder = this.addToOrder.bind(this)
@@ -37,6 +39,18 @@ class App extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleDarkTheme = this.handleDarkTheme.bind(this);
   }
+
+  handleOpenPdf1 = () => {
+    window.open('https://disk.yandex.ru/i/YStEn-of5eDmRQ', '_blank');
+  };
+
+  handleOpenPdf2 = () => {
+    window.open('https://disk.yandex.ru/i/rExZsJ3jMwL9IA', '_blank');
+  };
+
+  handleOpenPdf3 = () => {
+    window.open('https://disk.yandex.ru/i/4CZW3KM5clUAFg', '_blank');
+  };
 
   createConfetti(maxConfettis = 70, flyTime = 5000) {
     const container = document.querySelector(".confetti-container");
@@ -83,13 +97,21 @@ class App extends React.Component {
     });
   }
 
+  // В App.js
+  handleScrollInHeader = () => {
+    this.headerRef.current.handleScroll();
+  };
+
+
   componentDidMount() {
+    window.addEventListener('scroll', this.handleScrollInHeader);
     window.addEventListener('resize', this.handleResize);
     window.addEventListener('storage', this.handleStorageChange);
     this.createConfetti();
   }
 
   componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScrollInHeader);
     window.removeEventListener('resize', this.handleResize);
     window.removeEventListener('storage', this.handleStorageChange);
   }
@@ -139,13 +161,22 @@ class App extends React.Component {
     });
   }
 
+  handleFormOpenFooter = () => {
+    this.setState({ isOpenFooter: true });
+  };
+
+  handleFormCloseFooter = () => {
+    this.setState({ isOpenFooter: false });
+  };
+
   render() {
+    const { isOpenFooter } = this.state;
     return (
       <div className={this.state.isDark ? "darkTheme" : ""}>
         <div className='wrapper'>
           <div className="confetti-container"></div>
 
-          <Header
+          <Header ref={this.headerRef}
             handleDarkTheme={this.handleDarkTheme}
             email={this.state.email}
             orders={this.state.orders}
@@ -178,13 +209,37 @@ class App extends React.Component {
 
           <Categories chooseCategory={this.chooseCategory} />
 
-          <div className='presentation'></div>
+          <div className="top-presentation">
+            <div className="text-all">
+              <div className="logo-under" style={{ userSelect: "none" }}>Женский трикотаж</div>
+              <div className="text-1">Добро пожаловать в «SoftSeason©»!</div>
+              <div className="text-1-1" style={{ userSelect: "none" }}>
+                «SoftSeason©»! – это ваш уютный оазис стиля и комфорта в мире женской трикотажной одежды. В «SoftSeason©» мы понимаем, что красота скрывается в простоте и удобстве. Наша цель - помочь вам выглядеть стильно, не жертвуя комфортом. Мы предлагаем широкий выбор трикотажных изделий, которые подчеркнут вашу индивидуальность в повседневной жизни.
+              </div>
+              <div className="text-2" style={{ userSelect: "none" }}>От уютных свитеров до теплых кардиганов в «SoftSeason©» вы найдете все необходимое для создания многофункциональных образов на любой случай. Наша одежда изготовлена из мягких и качественных материалов, чтобы обеспечить вам максимальный комфорт в течение всего дня.
+                <div className="text-2-1">В мире «SoftSeason©» каждый сезон – это повод обновить свой стиль и насладиться мягкими ощущениями!</div></div>
+            </div>
+          </div>
 
           <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
           {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} />}
-
+          {isOpenFooter && (
+            <div className="full-item">
+              <div className='review'>
+                <div className="modal-content">
+                  <div className='footer-information' style={{ fontSize: '20px', fontStyle: 'normal', marginBottom: '20px' }}>Нажмите чтобы ознакомиться:</div>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleOpenPdf1}>Раздел реквизиты</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleOpenPdf2}>Условия</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginBottom: '20px', width: '100%' }} onClick={this.handleOpenPdf3}>Политика конфиденциальности и обработки персональных данных сайта</button>
+                  <div className='closeButton' onClick={this.handleFormCloseFooter}>✖</div>
+                </div>
+              </div>
+            </div>
+          )}
+          <div className='bottom-presentation'>
+            <div className="bottom-button" onClick={this.handleFormOpenFooter}>Ознакомиться с условиями и правовой информацией</div>
+          </div>
           <Footer />
-
         </div>
       </div>
     );
@@ -203,16 +258,18 @@ class App extends React.Component {
     this.setState({ showFullItem: !this.state.showFullItem })
   }
 
-  chooseCategory(category) {
-    window.scrollTo(0, 400);
-    if (category === 'all') {
+  chooseCategory(categoryOr) {
+    window.scrollTo(0, 1000);
+    if (categoryOr === 'all') {
       this.setState({ currentItems: this.state.items })
       return
     }
+
     this.setState({
-      currentItems: this.state.items.filter(el => el.category === category)
+      currentItems: this.state.items.filter(el => el.category === categoryOr || el.material === categoryOr || el.color === categoryOr)
     })
   }
+
 
   deleteOrder = (id) => {
     this.setState(prevState => {

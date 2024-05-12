@@ -1,6 +1,10 @@
 .darkTheme header .logo {
     color: #ffffff;
     background: #00000080;
+    border-left: 10px solid var(--logoDark);
+    border-right: 10px solid var(--logoDark);
+    border-top: 5px solid var(--logoDark);
+    border-bottom: 5px solid var(--logoDark) ;
 }
 
 .darkTheme header {
@@ -10,22 +14,21 @@
 
 .darkTheme ul.nav li {
     color: #3a3a3a;
-    opacity: 0.7;
-    border: 1px #ffffff solid;
+    border-bottom: solid #ffffff;
     transition: all 500ms ease;
 }
 
 .darkTheme header ul.nav li:hover {
     color: #ffffff;
-    opacity: 1;
+    border-bottom: none;
 }
 
 .darkTheme .wrapper {
-    background: #4b4b4b;
+    background: #363636;
 }
 
 .darkTheme .cart-container{
-    color: #ffffff;
+    color: var(--cart-2);
     opacity: 0.8;
 }
 
@@ -47,19 +50,19 @@
 }
 
 .darkTheme .trigger {
-    background: #D9C3EA;
-    color: #ffffff;
+    background: var(--nth-4);
+    color: #000000;
     border-bottom: 1px solid #ffffff;
     border-top: 1px solid #ffffff;
 }
 
 .darkTheme .trigger:hover {
     background: #4b4b4b;
+    color: #ffffff;
 }
 
 .darkTheme main .item {
     background: #3a3a3a;
-    border: 1px solid #ffffff;
 }
 
 .darkTheme main .item h2,
@@ -68,22 +71,26 @@
     color: #ffffff;
 }
 
-.darkTheme main b,
-.darkTheme .full-item b {
-    border: 5px #ffffff solid;
-}
-
 .darkTheme main .add-to-cart,
 .darkTheme .full-item .add-to-cart{
-    margin: -53px -10px 0 0 ;
+    margin: -52px -10px 0 0 ;
     background: #ffffff;
     color: #000;
 }
 
-.darkTheme main .add-to-cart:hover,
+.darkTheme main .add-to-cart {
+    margin: -54px -10px 0 0 ;
+}
+
+.darkTheme .full-item .add-to-cart{
+    margin: -53px 20px 0 0 ;
+}
+
+.darkTheme main .add-to-cart:hover {
+    color: #ffffff;
+}
 .darkTheme .full-item .add-to-cart:hover {
-    background: #686868;
-    color: #222222;
+    color: #000000;
 }
 
 .darkTheme main .item img{
@@ -92,7 +99,7 @@
 
 .darkTheme main .item .img1,
 .darkTheme .full-item .img1 {
-    border-bottom: 1px solid #ffa07a9a;
+    border-bottom: 5px solid #ffa07a9a;
 }
 
 .darkTheme main .item .img1-click,
@@ -105,8 +112,13 @@
     background-color: #ffffff;
 }
 
-.darkTheme header .shop-cart .empty {
+.darkTheme header .shop-cart .empty h2 {
+    color: #ffffff;
     background-color: #000000;
+}
+
+.darkTheme .modal-content .item h2 {
+    color: #ffffff;
 }
 
 .darkTheme header .shop-cart .item{
@@ -114,7 +126,7 @@
     box-shadow: 0 0 10px 10px #d4d4d486, 0 0 10px 10px #d4d4d486 inset;
 }
 
-.darkTheme header .shop-cart h2 {
+.darkTheme header .shop-cart {
     color: #000000;
 }
 
@@ -154,6 +166,11 @@
     color: #e9dbdb;
 }
 
+.darkTheme form .address {
+    background: #3a3a3a;
+    color: #e9dbdb;
+}
+
 .darkTheme form .message {
     background: #3a3a3a;
     color: #e9dbdb;
@@ -182,6 +199,10 @@
     color: #fff;
 }
 
+.darkTheme form .address1 {
+    color: #fff;
+}
+
 .darkTheme form .message1 {
     color: #fff;
 }
@@ -196,10 +217,6 @@
 
 .darkTheme form .verify1 {
     color: #fff;
-}
-
-.darkTheme .modal-content h2 {
-    color: #ffffff;
 }
 
 .darkTheme .modal-content .sum {
@@ -225,8 +242,6 @@
 }
 
 .darkTheme .review-display li {
-    background: #000000;
-    border: 5px solid #ffffff;
     color: #ffffff;
 }
 
@@ -239,21 +254,52 @@
     background-color: #6b6b6b;
 }
 
-.darkTheme .categories li:nth-child(2) {
-    background: #d9c3ea;
+.darkTheme .categories o{
+    color: #ffffff;
 }
 
-.darkTheme .categories li:nth-child(3) {
-    background: #ceeac3;
+.darkTheme .full-item h2 {
+    color: #ffffff;
 }
 
-.darkTheme .categories li:nth-child(4) {
-    background: #d9c3ea;
+.darkTheme .full-item p {
+    color: #ffffff;
 }
 
-.darkTheme .categories li:nth-child(5) {
-    background: #ceeac3;
+.darkTheme  main b,
+.darkTheme  .full-item b {
+    color: #ffffff;
+    border: none;
 }
-.darkTheme .categories li:nth-child(6) {
-    background: #d9c3ea;
+
+.darkTheme  .full-item b {
+    border: 5px #ffffff solid;
+}
+
+.darkTheme .full-item .modal-content b {
+    border: none;
+}
+
+.darkTheme .button-88 {
+    --color: #ffffff;
+}
+
+.darkTheme footer{
+    color: #ffffff;
+}
+
+.darkTheme .top-presentation {
+    color: #ffffff
+}
+
+.darkTheme .top-presentation .text-2-1 {
+    border-bottom: 5px solid #ffffff;
+}
+
+.darkTheme .logo-under {
+    border-top: 5px solid #ffffff;
+}
+
+.darkTheme .footer-information {
+    color: #ffffff;
 }

@@ -4,7 +4,7 @@ IF NOT EXISTS users
 
 CREATE TABLE
 IF NOT EXISTS orders
-(id INTEGER PRIMARY KEY, userId INTEGER, date TEXT NOT NULL, message TEXT NOT NULL, phone TEXT NOT NULL, `order` TEXT NOT NULL, FOREIGN KEY
+(id INTEGER PRIMARY KEY, userId INTEGER, date TEXT NOT NULL, message TEXT NOT NULL, phone TEXT NOT NULL, address TEXT NOT NULL, `order` TEXT NOT NULL, email TEXT NOT NULL, FOREIGN KEY
 (userId) REFERENCES users
 (id));
 
@@ -19,5 +19,3 @@ IF NOT EXISTS reviews
 (email) REFERENCES users
 (email)
 );
-
-

@@ -19,6 +19,7 @@ class LoginModal extends Component {
             showChangePasswordForm: false,
             changePassword: false,
             userId: '',
+            changePasswordCode: false,
         };
     }
 
@@ -70,6 +71,19 @@ class LoginModal extends Component {
         this.setState({ userId: id.toString() });
     }
 
+    handleVerifySubmit1 = (event) => {
+        event.preventDefault();
+        const inputCode = event.target.elements.verifyInput1.value;
+        if (inputCode === this.state.verifyCode) {
+            alert('Код подтвержден');
+            this.setState({ showChangePasswordForm: true, changePasswordCode: false });
+        } else {
+            alert('Неверный код');
+            console.log(inputCode)
+            console.log(this.state.verifyCode)
+        }
+    }
+
     verifyCodeSend = () => {
         fetch('http://localhost:2000/register', {
             method: 'POST',
@@ -117,6 +131,32 @@ class LoginModal extends Component {
             });
     }
 
+    changePasswordCodeSend = () => {
+        fetch('http://localhost:2000/changePasswordCode', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: this.state.email,
+            }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 200) {
+                    const decodedToken = jwtDecode(data.token);
+                    const verifyCode = decodedToken.code;
+                    this.setState({ verifyCode: verifyCode });
+                    alert('Код подтверждения отправлен на вашу почту');
+                } else {
+                    alert('Ошибка при отправке кода на почту');
+                }
+            })
+            .catch((error) => {
+                console.error('Ошибка:', error);
+            });
+    }
+
 
     handleChangePassword = (event) => {
         event.preventDefault();
@@ -157,6 +197,9 @@ class LoginModal extends Component {
                     <div className="modal-content">
                         <div className='login-form'>
                             <form id="login-form" method="POST" onSubmit={this.handleSubmit.bind(this)}>
+
+                                {/*---------------------------------------------------------------------------------------*/}
+
                                 <label className='email1' htmlFor="email">Email:</label>
                                 <input
                                     className='email'
@@ -171,6 +214,9 @@ class LoginModal extends Component {
                                     }}
                                     required
                                 />
+
+                                {/*---------------------------------------------------------------------------------------*/}
+                                {/*changepass*/}
                                 <label className='password1' htmlFor="password">Пароль:</label>
                                 <input
                                     className='password'
@@ -186,11 +232,26 @@ class LoginModal extends Component {
                                     required
                                 />
                                 {this.state.changePassword && (
-                                    <div className="changePasswordButton" onClick={() => this.setState({ showChangePasswordForm: true })}>Забыли пароль?</div>
+                                    <div className="changePasswordButton" onClick={() => { this.setState({ changePasswordCode: true }); this.changePasswordCodeSend(); }}>Забыли пароль?</div>
                                 )}
                                 <button type="submit" disabled={!this.state.emailValid || !this.state.passwordValid}>Войти</button>
                                 <button type="button" onClick={onClose}>Закрыть</button>
                             </form>
+
+                            {this.state.changePasswordCode && (
+                                <form onSubmit={this.handleVerifySubmit1}>
+                                    <label className='verify1' htmlFor="verifyInput">Введите код:</label>
+                                    <input
+                                        className='verify'
+                                        type="text"
+                                        id="verifyInput1"
+                                        name="verifyInput1"
+                                        required
+                                    />
+                                    <button type="submit">Подтвердитьь</button>
+                                    <button type="button" onClick={() => this.setState({ changePasswordCode: false })}>Отмена</button>
+                                </form>
+                            )}
 
                             {this.state.showChangePasswordForm && (
                                 <form className="changePasswordForm" onSubmit={this.handleChangePassword}>
@@ -206,6 +267,10 @@ class LoginModal extends Component {
                                     <button type="button" onClick={() => this.setState({ showChangePasswordForm: false })}>Отмена</button>
                                 </form>
                             )}
+
+                            {/*changepass*/}
+                            {/*---------------------------------------------------------------------------------------*/}
+
                             {this.state.SubmitButton && (
                                 <form onSubmit={this.handleVerifySubmit}>
                                     <label className='verify1' htmlFor="verifyInput">Введите код:</label>
@@ -220,6 +285,9 @@ class LoginModal extends Component {
                                     <button type="button" onClick={() => this.setState({ SubmitButton: false })}>Отмена</button>
                                 </form>
                             )}
+
+                            {/*---------------------------------------------------------------------------------------*/}
+
                         </div>
                     </div>
                 </div>
