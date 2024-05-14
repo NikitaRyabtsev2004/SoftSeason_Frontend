@@ -11,7 +11,7 @@ export class Footer extends Component {
     render() {
         return (
             <>
-                <footer>SoftSeason все права защищены &copy;
+                <footer>«SoftSeason&copy;» все права защищены.
                 </footer>
             </>
         )

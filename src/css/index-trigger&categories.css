@@ -29,11 +29,10 @@
 }
 
 .trigger-background {
-    top: 100px;
     position: sticky;
     z-index: 102;
     width: 100vw;
-    margin: auto;
+    margin: 20px 0 0 0;
     display: flex; 
     justify-content: center;
     align-items: center; 

@@ -7,6 +7,9 @@ import ShowFullItem from "./copmonents/ShowFullItem.js";
 import FormModal from "./copmonents/ShowForm.js";
 import LoginModal from "./copmonents/LoginForm.js";
 import items from "./source/ProductData.js";
+import Conditions from "./files/Условия.js"
+import Requsites from "./files/Рекввиизиты.js";
+import Politics from "./files/Политика.js"
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -29,6 +32,9 @@ class App extends React.Component {
       isLoggedIn: isLoggedIn,
       isDark: isDark,
       isOpenFooter: false,
+      isOpenConditions: false,
+      isOpenPolitics: false,
+      isOpenRequsites: false,
     }
     this.state.currentItems = this.state.items
     this.addToOrder = this.addToOrder.bind(this)
@@ -169,8 +175,35 @@ class App extends React.Component {
     this.setState({ isOpenFooter: false });
   };
 
+  handleFormOpenConditions = () => {
+    this.setState({ isOpenConditions: true });
+  };
+
+  handleFormCloseConditions = () => {
+    this.setState({ isOpenConditions: false });
+  };
+
+  handleFormOpenPolitics = () => {
+    this.setState({ isOpenPolitics: true });
+  };
+
+  handleFormClosePolitics = () => {
+    this.setState({ isOpenPolitics: false });
+  };
+
+  handleFormOpenRequsites = () => {
+    this.setState({ isOpenRequsites: true });
+  };
+
+  handleFormCloseRequsites = () => {
+    this.setState({ isOpenRequsites: false });
+  };
+
   render() {
     const { isOpenFooter } = this.state;
+    const { isOpenConditions } = this.state;
+    const { isOpenPolitics } = this.state;
+    const { isOpenRequsites } = this.state;
     return (
       <div className={this.state.isDark ? "darkTheme" : ""}>
         <div className='wrapper'>
@@ -211,27 +244,54 @@ class App extends React.Component {
 
           <div className="top-presentation">
             <div className="text-all">
-              <div className="logo-under" style={{ userSelect: "none" }}>Женский трикотаж</div>
               <div className="text-1">Добро пожаловать в «SoftSeason©»!</div>
-              <div className="text-1-1" style={{ userSelect: "none" }}>
-                «SoftSeason©»! – это ваш уютный оазис стиля и комфорта в мире женской трикотажной одежды. В «SoftSeason©» мы понимаем, что красота скрывается в простоте и удобстве. Наша цель - помочь вам выглядеть стильно, не жертвуя комфортом. Мы предлагаем широкий выбор трикотажных изделий, которые подчеркнут вашу индивидуальность в повседневной жизни.
-              </div>
-              <div className="text-2" style={{ userSelect: "none" }}>От уютных свитеров до теплых кардиганов в «SoftSeason©» вы найдете все необходимое для создания многофункциональных образов на любой случай. Наша одежда изготовлена из мягких и качественных материалов, чтобы обеспечить вам максимальный комфорт в течение всего дня.
-                <div className="text-2-1">В мире «SoftSeason©» каждый сезон – это повод обновить свой стиль и насладиться мягкими ощущениями!</div></div>
+              <div className="text-1-1" style={{ userSelect: "none" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;«SoftSeason©»! – это ваш уютный оазис стиля и комфорта в мире женской трикотажной одежды. В «SoftSeason©» мы понимаем, что красота скрывается в простоте и удобстве. Наша цель - помочь вам выглядеть стильно, не жертвуя комфортом. Мы предлагаем широкий выбор трикотажных изделий, которые подчеркнут вашу индивидуальность в повседневной жизни.</div>
+              <div className="text-2" style={{ userSelect: "none" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;От уютных свитеров до теплых кардиганов в «SoftSeason©» вы найдете все необходимое для создания многофункциональных образов на любой случай. Наша одежда изготовлена из мягких и качественных материалов, чтобы обеспечить вам максимальный комфорт в течение всего дня.</div>
+              <div className="text-2-1">В мире «SoftSeason©» каждый сезон – это повод обновить свой стиль и насладиться мягкими ощущениями!</div>
             </div>
           </div>
 
           <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
-          {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} />}
+          {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem}/>}
           {isOpenFooter && (
             <div className="full-item">
               <div className='review'>
                 <div className="modal-content">
                   <div className='footer-information' style={{ fontSize: '20px', fontStyle: 'normal', marginBottom: '20px' }}>Нажмите чтобы ознакомиться:</div>
-                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleOpenPdf1}>Раздел реквизиты</button>
-                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleOpenPdf2}>Условия</button>
-                  <button style={{ fontSize: '18px', fontWeight: '400', marginBottom: '20px', width: '100%' }} onClick={this.handleOpenPdf3}>Политика конфиденциальности и обработки персональных данных сайта</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenRequsites}>Раздел реквизиты</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenConditions}>Условия</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenPolitics}>Политика конфиденциальности и обработки персональных данных сайта</button>
                   <div className='closeButton' onClick={this.handleFormCloseFooter}>✖</div>
+                </div>
+              </div>
+            </div>
+          )}
+          {isOpenConditions && (
+            <div className="full-item">
+              <div className='review'>
+                <div className="modal-content">
+                  <Conditions/>
+                  <div className='closeButton' onClick={this.handleFormCloseConditions}>✖</div>
+                </div>
+              </div>
+            </div>
+          )}
+          {isOpenPolitics && (
+            <div className="full-item">
+              <div className='review'>
+                <div className="modal-content">
+                  <Politics/>
+                  <div className='closeButton' onClick={this.handleFormClosePolitics}>✖</div>
+                </div>
+              </div>
+            </div>
+          )}
+          {isOpenRequsites && (
+            <div className="full-item">
+              <div className='review'>
+                <div className="modal-content">
+                  <Requsites/>
+                  <div className='closeButton' onClick={this.handleFormCloseRequsites}>✖</div>
                 </div>
               </div>
             </div>

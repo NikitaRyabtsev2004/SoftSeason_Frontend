@@ -303,3 +303,7 @@
 .darkTheme .footer-information {
     color: #ffffff;
 }
+
+.darkTheme .message1 .important label {
+    color: #ffffff;
+}

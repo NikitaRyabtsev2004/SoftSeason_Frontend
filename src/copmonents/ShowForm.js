@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Order from './Order';
-
+import Conditions from "../files/Условия.js"
+import Politics from "../files/Политика.js"
 class FormModals extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,31 @@ class FormModals extends Component {
       address: '',
       ip: '',
       checkboxesChecked: false,
+      isOpenConditions: false,
+      isOpenPolitics: false,
     };
+    this.targetRef = React.createRef();
+    this.copyToClipboardRef = React.createRef();
+  }
+
+  handleFormOpenConditions = () => {
+    this.setState({ isOpenConditions: true });
+  };
+
+  handleFormCloseConditions = () => {
+    this.setState({ isOpenConditions: false });
+  };
+
+  handleFormOpenPolitics = () => {
+    this.setState({ isOpenPolitics: true });
+  };
+
+  handleFormClosePolitics = () => {
+    this.setState({ isOpenPolitics: false });
+  }
+
+  handleScrollToTarget = () => {
+    this.targetRef.current.scrollIntoView({ behavior: "smooth" });
   }
 
   handleSubmit = (event) => {
@@ -29,6 +54,7 @@ class FormModals extends Component {
     }
 
     else if (!this.state.checkboxesChecked) {
+      this.handleScrollToTarget();
       alert('Необходимо отметить галочки');
       return;
     }
@@ -130,7 +156,8 @@ class FormModals extends Component {
   }
 
   render() {
-
+    const { isOpenConditions } = this.state;
+    const { isOpenPolitics } = this.state;
     let sum = this.props.orders.reduce((acc, order) => acc + Number.parseFloat(order.price), 0);
     return (
       <>
@@ -192,25 +219,49 @@ class FormModals extends Component {
                 {this.props.orders.map((order) => (
                   <Order key={order.id} item={order} onDelete={this.props.onDeleteOrder} />
                 ))}
-                <button type='submit' onClick={this.handleSubmit}>Отправить</button>
+                <button type='submit' onClick={this.handleSubmit}>Заказать</button>
                 <p className="sum">Сумма: {new Intl.NumberFormat().format(sum)}₽</p>
                 <div className='closeButton' onClick={this.props.onClose}>✖</div>
                 <div className='-color-' style={{ userSelect: "none"}}>-</div>
                 <label className='message1' htmlFor="message">Важно :
-
+                  <div className='important'> 
                   <label htmlFor="important1">1) В почтовом письме будет указанно как осуществляется оплата товара</label>
                   <label htmlFor="important2">2) Просим вносить все данные корректно, в случае если вы уже оформили заказ и указали информацию неверно то можете переоформить заказ заново, после вам прийдет новое письмо на почту</label>
-                  <label htmlFor="important3">3) Доставка осуществляется только логистическим оператором СДЭК(CDEK)</label>
-                  <button type="button" onClick={() => this.setState({ checkboxesChecked: !this.state.checkboxesChecked })}>Нажмите если согласны с нижеуказанным</button>
+                  <label htmlFor="important3">3) Доставка товаров осуществляется следующими логистическими службами: СДЭК, Boxbery, PickPoint.
+                  </label>
+                  <label className='message1' htmlFor="message">Осуществляя заказ вы подтверждаете своё согласие с:</label>
+        
                   <div className='show-form-desc-al'>
-                    <label htmlFor="important1">1) Политика конфиденциальности и обработки персональных данных сайта</label>
+                    <label style={{cursor:"pointer"}} onClick={this.handleFormOpenPolitics} htmlFor="important1">1) Политика конфиденциальности и обработки персональных данных сайта</label>
                     <input type="checkbox" id="important1" name="important1" checked={this.state.checkboxesChecked} disabled />
                   </div>
                   <div className='show-form-desc-al'>
-                    <label htmlFor="important2">2) Условия</label>
+                    <label style={{cursor:"pointer"}} onClick={this.handleFormOpenConditions} htmlFor="important2">2) Условия</label>
                     <input type="checkbox" id="important2" name="important2" checked={this.state.checkboxesChecked} disabled />
                   </div>
+                  <button ref={this.targetRef} type="button" onClick={() => this.setState({ checkboxesChecked: !this.state.checkboxesChecked })}>Я согласен(а)</button>
+                  </div>
                 </label>
+                {isOpenConditions && (
+                <div className="full-item">
+                  <div className='review'>
+                    <div className="modal-content">
+                      <Conditions/>
+                      <div className='closeButton' onClick={this.handleFormCloseConditions}>✖</div>
+                    </div>
+                  </div>
+                </div>
+                )}
+                {isOpenPolitics && (
+                  <div className="full-item">
+                    <div className='review'>
+                      <div className="modal-content">
+                        <Politics/>
+                        <div className='closeButton' onClick={this.handleFormClosePolitics}>✖</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </form>
             </div>
           </div>

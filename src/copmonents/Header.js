@@ -37,7 +37,7 @@ class Header extends Component {
                             <Order onDelete={props.onDelete} key={el.id} item={el} />
                         ))}
                         <p className="sum">Сумма: {new Intl.NumberFormat().format(sum)} ₽</p>
-                        <div style={{ userSelect: "none" }} className='buy' onClick={this.props.handleFormOpen}>Оформить заказ</div>
+                        <div style={{ userSelect: "none" }} className='buy' onClick={this.props.handleFormOpen}>Заказать</div>
                     </div>
                 </div>
             );
@@ -70,7 +70,7 @@ class Header extends Component {
 
                             <ul style={{ userSelect: "none" }} className='nav'>
                                 <li onClick={this.props.handleDarkTheme}>Поменять тему</li>
-                                <li onClick={this.props.handleLogout}>Выйти</li>
+                
                                 {this.props.isLoggedIn ? (
                                     <>
                                         <li>{localStorage.getItem('email')}</li>
@@ -78,6 +78,7 @@ class Header extends Component {
                                 ) : (
                                     <li onClick={this.props.openLoginModal}>Войти | Зарегестрироваться</li>
                                 )}
+                                 <li onClick={this.props.handleLogout}>Выйти</li>
                             </ul>
                         </div>
                     </div>

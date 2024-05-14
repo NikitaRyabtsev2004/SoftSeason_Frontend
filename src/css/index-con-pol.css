@@ -1,0 +1,22 @@
+.conditions {
+    font-style: normal;
+    font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.conditions p{
+    text-align:center;
+    font-size: 30px;
+}
+
+.conditions div{
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.conditions .green{
+    color: rgb(27, 135, 27);
+}
+
+.conditions .red{
+    color: rgb(189, 13, 13);
+}

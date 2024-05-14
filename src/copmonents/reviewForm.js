@@ -31,6 +31,10 @@ export class Footer extends Component {
     }
 
     submitReview = () => {
+        if (!this.props.isLoggedIn) {
+            alert('Вы должны быть зарегистрированы');
+            return;
+        } else {
         const email = localStorage.getItem('email');
         const { reviewText } = this.state;
         const reviewDate = new Date().toLocaleDateString('ru-RU', {
@@ -58,6 +62,7 @@ export class Footer extends Component {
                 }
             })
             .catch(error => console.error('Ошибка:', error));
+        }
     }
 
 

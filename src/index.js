@@ -8,6 +8,7 @@ import './css/index-shop-cart.css'
 import './css/index-trigger&categories.css'
 import './css/index-bg&cf.css'
 import './css/index-img.css'
+import './css/index-con-pol.css'
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
