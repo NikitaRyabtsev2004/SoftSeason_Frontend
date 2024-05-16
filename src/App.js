@@ -337,8 +337,10 @@ class App extends React.Component {
       if (itemIndex !== -1) {
         const newOrders = [...prevState.orders];
         newOrders.splice(itemIndex, 1);
-        return { orders: newOrders };
-      }
+        return { 
+          orders: newOrders,
+      };
+    }
       return prevState;
     });
   };
@@ -347,7 +349,7 @@ class App extends React.Component {
     const itemIndex = this.state.orders.findIndex(el => el.id === item.id);
     if (itemIndex === -1) {
       this.setState(prevState => ({
-        orders: [...prevState.orders, item]
+        orders: [...prevState.orders, item],
       }));
     }
   };

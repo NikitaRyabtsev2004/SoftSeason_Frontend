@@ -56,9 +56,8 @@ class Header extends Component {
                 <header>
                     <div className='upHeader' >
                         <span style={{ userSelect: "none" }} className='logo'>SoftSeason</span>
-                        <div style={{ display: "flex", alignItems: "center", marginLeft: "30px", justifyContent: "" }}>
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "" }}>
                             <div style={{ userSelect: "none" }} className="cart-container">
-                                <FaShoppingCart onClick={() => { this.setState({ cartOpen: !this.state.cartOpen }); console.log(this.state.cartOpen); this.props.toggleCartVisibility(); }} className={`shop-cart-button ${this.state.cartOpen && 'active'}`} />
                                 {this.state.cartOpen !== null && (
                                     <div class="shop-cart-container">
                                         <div className={`shop-cart ${this.state.cartOpen ? '' : 'close'}`}>
@@ -67,8 +66,10 @@ class Header extends Component {
                                     </div>
                                 )}
                             </div>
-
                             <ul style={{ userSelect: "none" }} className='nav'>
+                                <li onClick={() => { this.setState({ cartOpen:!this.state.cartOpen }); console.log(this.state.cartOpen); this.props.toggleCartVisibility(); }}>
+                                <FaShoppingCart /> {this.props.orders.length === 0 ? '' : this.props.orders.length} Корзина 
+                                </li>
                                 <li onClick={this.props.handleDarkTheme}>Поменять тему</li>
                 
                                 {this.props.isLoggedIn ? (
@@ -78,7 +79,7 @@ class Header extends Component {
                                 ) : (
                                     <li onClick={this.props.openLoginModal}>Войти | Зарегестрироваться</li>
                                 )}
-                                 <li onClick={this.props.handleLogout}>Выйти</li>
+                                <li onClick={this.props.handleLogout}>Выйти</li>
                             </ul>
                         </div>
                     </div>

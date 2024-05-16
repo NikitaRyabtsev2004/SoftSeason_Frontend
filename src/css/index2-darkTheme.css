@@ -14,7 +14,6 @@
 
 .darkTheme ul.nav li {
     color: #3a3a3a;
-    border-bottom: solid #ffffff;
     transition: all 500ms ease;
 }
 
@@ -108,7 +107,7 @@
 }
 
 .darkTheme header .shop-cart {
-    border: 5px solid #ffffff;
+    border: 2px solid #ffffff;
     background-color: #ffffff;
 }
 
@@ -290,10 +289,6 @@
 
 .darkTheme .top-presentation {
     color: #ffffff
-}
-
-.darkTheme .top-presentation .text-2-1 {
-    border-bottom: 5px solid #ffffff;
 }
 
 .darkTheme .logo-under {
