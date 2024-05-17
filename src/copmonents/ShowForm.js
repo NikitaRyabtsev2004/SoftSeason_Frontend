@@ -208,6 +208,7 @@ class FormModals extends Component {
                   <div className='show-form-desc'>Коментарий или пожелание(можно оставить без изменений)</div>
                 </label>
                 <textarea
+                  style={{maxHeight:"250px", minHeight:"150px", overflowX:"hidden"}}
                   className='message'
                   id="message"
                   rows="10"
@@ -219,27 +220,30 @@ class FormModals extends Component {
                 {this.props.orders.map((order) => (
                   <Order key={order.id} item={order} onDelete={this.props.onDeleteOrder} />
                 ))}
-                <button type='submit' onClick={this.handleSubmit}>Заказать</button>
+          
                 <p className="sum">Сумма: {new Intl.NumberFormat().format(sum)}₽</p>
                 <div className='closeButton' onClick={this.props.onClose}>✖</div>
-                <div className='-color-' style={{ userSelect: "none"}}>-</div>
-                <label className='message1' htmlFor="message">Важно :
+                <label  style={{marginTop:"40px"}} className='message1' htmlFor="message">Важно :
                   <div className='important'> 
                   <label htmlFor="important1">1) В почтовом письме будет указанно как осуществляется оплата товара</label>
                   <label htmlFor="important2">2) Просим вносить все данные корректно, в случае если вы уже оформили заказ и указали информацию неверно то можете переоформить заказ заново, после вам прийдет новое письмо на почту</label>
                   <label htmlFor="important3">3) Доставка товаров осуществляется следующими логистическими службами: СДЭК, Boxbery, PickPoint.
                   </label>
-                  <label className='message1' htmlFor="message">Осуществляя заказ вы подтверждаете своё согласие с:</label>
-        
-                  <div className='show-form-desc-al'>
-                    <label style={{cursor:"pointer"}} onClick={this.handleFormOpenPolitics} htmlFor="important1">1) Политика конфиденциальности и обработки персональных данных сайта</label>
-                    <input type="checkbox" id="important1" name="important1" checked={this.state.checkboxesChecked} disabled />
-                  </div>
-                  <div className='show-form-desc-al'>
-                    <label style={{cursor:"pointer"}} onClick={this.handleFormOpenConditions} htmlFor="important2">2) Условия</label>
-                    <input type="checkbox" id="important2" name="important2" checked={this.state.checkboxesChecked} disabled />
-                  </div>
-                  <button ref={this.targetRef} type="button" onClick={() => this.setState({ checkboxesChecked: !this.state.checkboxesChecked })}>Я согласен(а)</button>
+                  <label style={{marginTop:"40px", marginBottom:"20px"}} className='message1' htmlFor="message">Осуществляя заказ вы подтверждаете своё согласие с:</label>
+                    <div style={{display:"flex", flexDirection:"column"}}>
+                      <div style={{display:"flex",}}>
+                        <div className='show-form-desc-al'>
+                          <label className="important-text" style={{cursor:"pointer"}} onClick={this.handleFormOpenPolitics} htmlFor="important1">1) Политика конфиденциальности и обработки персональных данных сайта</label>
+                          <input type="checkbox" id="important1" name="important1" checked={this.state.checkboxesChecked} disabled />
+                        </div>
+                        <div className='show-form-desc-al'>
+                          <label className="important-text" style={{cursor:"pointer"}} onClick={this.handleFormOpenConditions} htmlFor="important2">2) Условия купли-продажи, заказа и возврата товаров на сайте</label>
+                          <input type="checkbox" id="important2" name="important2" checked={this.state.checkboxesChecked} disabled />
+                        </div>
+                      </div>
+                    <button style={{marginBottom:"20px", marginTop:"20px"}} ref={this.targetRef} type="button" onClick={() => this.setState({ checkboxesChecked: !this.state.checkboxesChecked })}>Я согласен(а)</button>
+                    <button type='submit' onClick={this.handleSubmit}>Заказать</button>
+                    </div>
                   </div>
                 </label>
                 {isOpenConditions && (

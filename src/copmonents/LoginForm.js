@@ -61,6 +61,13 @@ class LoginModal extends Component {
             alert('Неверный код');
         }
     }
+    
+    validatePassword(password) {
+        // Проверяем, что пароль состоит только из английских символов, содержит цифры, длину от 8 до 16 символов, допускаются специальные символы и верхний регистр
+        const regex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d\W]{8,16}$/;
+        return regex.test(password);
+    }
+    
 
     generateRandomId = () => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -199,8 +206,10 @@ class LoginModal extends Component {
                             <form id="login-form" method="POST" onSubmit={this.handleSubmit.bind(this)}>
 
                                 {/*---------------------------------------------------------------------------------------*/}
-
-                                <label className='email1' htmlFor="email">Email:</label>
+                                <label style={{fontSize:"18px"}}>Если вы впервые на сайте то можно пройти регистрации просто указав вашу электронную почту и укажите любой пароль. Вам также придет код подтверждения для активации аккаунта.</label>
+                                <label style={{fontSize:"18px"}}>Если вы были ранее зарегестрированны то просто укажите вашу почту и пароль.</label>
+                                <label className='email1' htmlFor="email">Электронная почта(Email):</label>
+                    
                                 <input
                                     className='email'
                                     type="email"
@@ -218,6 +227,7 @@ class LoginModal extends Component {
                                 {/*---------------------------------------------------------------------------------------*/}
                                 {/*changepass*/}
                                 <label className='password1' htmlFor="password">Пароль:</label>
+                                <label style={{fontSize:"18px"}}>Пароль должен содержать от 8 символов, а так же не превышать 16 символов, латинские буквы и цифры, для лучшей надежности можно использовать спецсимволы а так же буквы верхнего регистра.</label>
                                 <input
                                     className='password'
                                     type="password"

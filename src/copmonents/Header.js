@@ -75,6 +75,7 @@ class Header extends Component {
                                 {this.props.isLoggedIn ? (
                                     <>
                                         <li>{localStorage.getItem('email')}</li>
+                            
                                     </>
                                 ) : (
                                     <li onClick={this.props.openLoginModal}>Войти | Зарегестрироваться</li>

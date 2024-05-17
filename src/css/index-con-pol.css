@@ -20,3 +20,21 @@
 .conditions .red{
     color: rgb(189, 13, 13);
 }
+
+.conditions-border {
+    border-bottom: 2px solid #000000;
+}
+@media screen and (max-width:550px){
+    .important-text {
+        width: 100px;
+        text-align:left;
+        margin: 0 50px 0 -15px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width:550px){
+    .important-text {
+        width: 200px;
+    }
+}

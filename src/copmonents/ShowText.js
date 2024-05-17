@@ -16,7 +16,7 @@ export class ShowText extends Component {
     return (
       <div className='button-88-container'>
         <button className='button-88' onClick={this.toggleText}>
-          {this.state.showText ? 'Скрыть описание' : 'Показать полное описание'}
+          {this.state.showText ? `\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Скрыть описание\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0` : `Показать полное описание`}
         </button>
         {this.state.showText && <p className="animated-text">{textToShow}</p>}
       </div>

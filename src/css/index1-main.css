@@ -89,6 +89,7 @@ header {
     justify-content: space-around;
     align-items: center;
     left: auto;
+    position: relative;
 }
 
 header:hover {
@@ -193,6 +194,12 @@ ul.nav li:nth-child(4) {
     background: var(--nth-4);
     color: #000000;
 }
+
+ul.nav li:nth-child(5) {
+    transition: all 500ms ease;
+    background: var(--nth-4);
+    color: #000000;
+}
 /*//////////////////////////////////////////////////////////////////////////*/
 
 /*//////////////////////////////////////////////////////////////////////////*/
@@ -203,7 +210,7 @@ ul.nav li:nth-child(4) {
 
 /*//////////////////////////////////////////////////////////////////////////*/
 .buy {
-    font-size: 25px;
+    font-size: 30px;
     color: #ffffff;
     font-style: normal;
     animation: slideInOpacity 0.7s;
@@ -216,6 +223,7 @@ ul.nav li:nth-child(4) {
     border-radius: 25px;
     background: #00000091;
     width: 100%;
+    height: 60px;
 }
 
 .buy:hover {
@@ -321,19 +329,19 @@ main .item:hover {
 }
 
 main .item:hover:nth-child(4n+1) {
-    box-shadow: 0px 0px 90px 15px var(--nth-1);
+    box-shadow: 0px 0px 80px 70px var(--nth-1);
 }
 
 main .item:hover:nth-child(4n+2) {
-    box-shadow: 0px 0px 90px 15px var(--nth-2);
+    box-shadow: 0px 0px 80px 70px var(--nth-2);
 }
 
 main .item:hover:nth-child(4n+3) {
-    box-shadow: 0px 0px 90px 15px var(--nth-3);
+    box-shadow: 0px 0px 80px 70px var(--nth-3);
 }
 
 main .item:hover:nth-child(4n+4) {
-    box-shadow: 0px 0px 90px 15px var(--nth-4);
+    box-shadow: 0px 0px 80px 70px var(--nth-4);
 }
 
 /*//////////////////////////////////////////////////////////////////////////*/
@@ -526,7 +534,7 @@ main .add-to-cart:hover,
     touch-action: manipulation;
     align-items: center;
     text-align: center;
-    margin: 0 135px 10px 135px;
+    margin: 0 95px 10px 95px;
 }
 
 .button-88:hover,

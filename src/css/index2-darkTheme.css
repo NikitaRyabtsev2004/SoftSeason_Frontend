@@ -112,8 +112,7 @@
 }
 
 .darkTheme header .shop-cart .empty h2 {
-    color: #ffffff;
-    background-color: #000000;
+    color: #000000;
 }
 
 .darkTheme .modal-content .item h2 {
@@ -301,4 +300,28 @@
 
 .darkTheme .message1 .important label {
     color: #ffffff;
+}
+
+.darkTheme main .item:hover:nth-child(4n+1) {
+    box-shadow: 0px 0px 90px 10px var(--nth-1);
+}
+
+.darkTheme main .item:hover:nth-child(4n+2) {
+    box-shadow: 0px 0px 90px 10px var(--nth-2);
+}
+
+.darkTheme main .item:hover:nth-child(4n+3) {
+    box-shadow: 0px 0px 90px 10px var(--nth-3);
+}
+
+.darkTheme main .item:hover:nth-child(4n+4) {
+    box-shadow: 0px 0px 90px 10px var(--nth-4);
+}
+
+.darkTheme .conditions {
+    color: #ffffff;
+}
+
+.darkTheme .conditions-border {
+    border-bottom: 2px solid #ffffff;
 }

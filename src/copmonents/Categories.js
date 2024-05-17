@@ -9,6 +9,7 @@ export class Categories extends Component {
         this.state = {
             isOpen: false,
             isOpenReview: false,
+            isOpenEdit: false,
             categoriesAll: [
                 {
                     key: 'all',
@@ -48,7 +49,16 @@ export class Categories extends Component {
         this.setState({ isOpenReview: false });
     };
 
+    handleFormOpenEdit = () => {
+        this.setState({ isOpenEdit: true });
+    };
+
+    handleFormCloseEdit = () => {
+        this.setState({ isOpenEdit: false });
+    };
+
     render() {
+        const {isOpenEdit} = this.state;
         const { isOpen } = this.state;
         const { isOpenReview } = this.state;
         return (
@@ -60,7 +70,7 @@ export class Categories extends Component {
 
                                 {/*1*/}
                                 <div className='liDiv'>
-                                    <o style={{ position: "relative", display: "block" }}>Категории товаров</o>
+                                    <o style={{ position: "relative", display: "block", fontSize:"30px"}}>Категории товаров</o>
                                     {this.state.categoriesAll.map(el => (
                                         <li className="liAll" key={el.key} onClick={() => this.props.chooseCategory(el.key)}>
                                             {el.name}
@@ -114,9 +124,23 @@ export class Categories extends Component {
                         </div>
                     </div>
                 )}
+                {isOpenEdit && (
+                    <div className="full-item">
+                        <div className='review'>
+                            <div className="modal-content">
+                                
+                                <div className='closeButton' onClick={this.handleFormCloseEdit}>✖</div>
+                            </div>
+                        </div>
+                    </div>
+                )}
                 <div className='trigger-background'>
                     <div className='trigger' onClick={this.handleFormOpen} >Отсортировать</div>
                     <div className='trigger' onClick={this.handleFormOpenReview}>Отзывы</div>
+                    
+                    {localStorage.getItem('email') === 'nekit100118@gmail.com' && (
+                        <div className='trigger' onClick={this.handleFormOpenEdit}>Редактировать</div>
+                    )}
                 </div >
             </>
         );

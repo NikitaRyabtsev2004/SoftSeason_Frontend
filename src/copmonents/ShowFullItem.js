@@ -91,8 +91,8 @@ export class ShowFullItem extends Component {
           </div>
           {item.img.length > 1 && (
             <div className='next-previous'>
-              <div className='previous' style={{ fontStyle: 'normal' }} onClick={this.prevImage}>&#5130;</div>
-              <div className='next' style={{ fontStyle: 'normal' }} onClick={this.nextImage}>&#5125;</div>
+              <div className='previous' style={{ fontStyle: 'normal' }} onClick={this.prevImage}>&#8656;</div>
+              <div className='next' style={{ fontStyle: 'normal' }} onClick={this.nextImage}>&#8658;</div>
             </div>
           )}
           <h2>{item.title}</h2>

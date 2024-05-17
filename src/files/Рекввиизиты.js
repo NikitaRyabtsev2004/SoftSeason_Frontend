@@ -19,8 +19,8 @@ class Requisites extends Component {
   render() {
     return (
       <>
-        <div className='conditions'>
-          <p style={{borderBottom:"solid 2px #000000"}}>Раздел реквизиты</p>
+        <div className='conditions' style={{textAlign:"justify"}}>
+          <p className='conditions-border'>Раздел реквизиты</p>
           <div>{/*-----------------------*/}</div>
           <div style={{cursor:"pointer"}} onClick={() => this.copyToClipboard('SoftSeason©')}>Продавец: SoftSeason©</div>
           <div>{/*-----------------------*/}</div>
