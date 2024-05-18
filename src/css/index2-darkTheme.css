@@ -240,7 +240,7 @@
 }
 
 .darkTheme .review-display li {
-    color: #ffffff;
+    color: #000000;
 }
 
 .darkTheme .review-button {
@@ -298,9 +298,14 @@
     color: #ffffff;
 }
 
-.darkTheme .message1 .important label {
+.darkTheme .message1 .important  {
     color: #ffffff;
 }
+
+.darkTheme .important-text {
+    color: #ffffff;
+}
+
 
 .darkTheme main .item:hover:nth-child(4n+1) {
     box-shadow: 0px 0px 90px 10px var(--nth-1);
@@ -324,4 +329,14 @@
 
 .darkTheme .conditions-border {
     border-bottom: 2px solid #ffffff;
+}
+ 
+.darkTheme .review-display li h2 {
+    background: #000000;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+}
+
+.darkTheme .loginInf {
+    color: #ffffff;
 }

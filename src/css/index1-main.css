@@ -835,3 +835,35 @@ form .verify1 {
 .footer-information {
     color: #000000;
 }
+
+input [type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+}
+
+input [type="checkbox"]:checked {
+    background-color: #4CAF50 ;
+}
+
+.clicked {
+    color: rgb(117, 196, 117);
+}
+
+@media screen and (max-width:550px){
+    .clicked {
+        width: 100px;
+        text-align:left;
+        margin: 0 50px 0 -15px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width:550px){
+    .clicked {
+        width: 200px;
+    }
+}

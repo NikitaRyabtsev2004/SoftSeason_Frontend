@@ -52,7 +52,7 @@ class Header extends Component {
         };
 
         return (
-            <>
+            <> 
                 <header>
                     <div className='upHeader' >
                         <span style={{ userSelect: "none" }} className='logo'>SoftSeason</span>
