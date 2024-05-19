@@ -6,4 +6,4 @@ Sitemap: https://softseason.ru/Sitemap.xml
 # Для softseason.store
 User-agent: *
 Disallow:
-Sitemap: https://softseason.store/sitemap_softseason.store.xml
+Sitemap: https://softseason.store/Sitemap.xml
