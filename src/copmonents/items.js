@@ -7,10 +7,9 @@ export class Items extends Component {
     };
   }
   render() {
-    const shuffledItems = [...this.props.items].sort(() => Math.random() - 0.5);
     return (
       <main>
-        {shuffledItems.map(el => (
+        {this.props.items.map(el => (
           <Item onShowItem={this.props.onShowItem} key={el.id} item={el} onAdd={this.props.onAdd} />
         ))}
       </main>

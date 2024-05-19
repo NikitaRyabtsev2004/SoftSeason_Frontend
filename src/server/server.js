@@ -37,7 +37,7 @@ const jwt = require('jsonwebtoken');
 
 const bcrypt = require('bcrypt');
 
-server.post('/submitReview', (req, res) => {
+server.post('/api/submitReview', (req, res) => {
   const { email, review } = req.body;
   const date = new Date().toLocaleDateString('ru-RU', {
     year: 'numeric',
@@ -52,7 +52,7 @@ server.post('/submitReview', (req, res) => {
   });
 });
 
-server.get('/getReviews', (req, res) => {
+server.get('/api/getReviews', (req, res) => {
   db.all('SELECT * FROM reviews ORDER BY date DESC', [], (err, rows) => {
     if (err) {
       return res.status(500).send({ status: 500, message: "Internal server error" });
@@ -76,7 +76,7 @@ server.post('/newLogin', async (req, res) => {
   });
 })
 
-server.post('/register', async (req, res) => {
+server.post('/api/register', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
@@ -131,7 +131,7 @@ server.post('/register', async (req, res) => {
   });
 });
 
-server.post('/changePasswordCode', async (req, res) => {
+server.post('/api/changePasswordCode', async (req, res) => {
   const email = req.body.email;
   const verifyCode = generateVerifyCode();
   let responseSent = false;
@@ -171,7 +171,7 @@ server.post('/changePasswordCode', async (req, res) => {
 
 
 
-server.post('/changePassword', async (req, res) => {
+server.post('/api/changePassword', async (req, res) => {
   const email = req.body.email;
   const newPassword = req.body.newPassword;
 
@@ -194,7 +194,7 @@ server.post('/changePassword', async (req, res) => {
   });
 });
 
-server.post('/submit', async (req, res) => {
+server.post('/api/submit', async (req, res) => {
   const email = req.body.email;
   const ip = req.body.ip;
   const name = req.body.name;
@@ -259,7 +259,7 @@ server.post('/submit', async (req, res) => {
 });
 
 
-server.post('/sendMail', async (req, res) => {
+server.post('/api/sendMail', async (req, res) => {
   const email = req.body.email;
   const name = req.body.name;
   const phone = req.body.phone;

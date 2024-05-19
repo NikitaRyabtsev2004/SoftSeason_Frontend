@@ -32,7 +32,7 @@ class LoginModal extends Component {
         event.preventDefault();
         const inputCode = event.target.elements.verifyInput.value;
         if (inputCode === this.state.verifyCode) {
-            fetch('http://localhost:2000/newLogin', {
+            fetch('https://softseason.ru/api/newLogin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ class LoginModal extends Component {
     }
 
     verifyCodeSend = () => {
-        fetch('http://localhost:2000/register', {
+        fetch('https://softseason.ru/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ class LoginModal extends Component {
     }
 
     changePasswordCodeSend = () => {
-        fetch('http://localhost:2000/changePasswordCode', {
+        fetch('https://softseason.ru/api/changePasswordCode', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ class LoginModal extends Component {
         event.preventDefault();
         const newPassword = event.target.elements.newPassword.value;
         this.setState({ changePassword: false });
-        fetch('http://localhost:2000/changePassword', {
+        fetch('https://softseason.ru/api/changePassword', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -236,7 +236,7 @@ class LoginModal extends Component {
                                     value={this.state.password}
                                     onChange={(e) => {
                                         this.setState({ password: e.target.value });
-                                        const passwordValid = e.target.value.length >= 6;
+                                        const passwordValid = e.target.value.length >= 8;
                                         this.setState({ passwordValid });
                                     }}
                                     required

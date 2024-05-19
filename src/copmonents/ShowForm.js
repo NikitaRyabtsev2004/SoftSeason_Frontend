@@ -66,7 +66,7 @@ class FormModals extends Component {
     }
 
     else if (this.checkRequestsCount()) {
-      fetch('http://localhost:2000/submit', {
+      fetch('https://softseason.ru/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ class FormModals extends Component {
           alert('Отправлено1');
           this.props.onClose();
           ////////////////
-          fetch('http://localhost:2000/sendMail', {
+          fetch('https://softseason.ru/api/sendMail', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ class FormModals extends Component {
     const requestsCount = localStorage.getItem(`${ip}_requestsCount`) || 0;
     const currentTime = new Date().getTime();
 
-    if (!lastRequestTime || currentTime - lastRequestTime >= 60 * 1000 * 60 * 0) {
+    if (!lastRequestTime || currentTime - lastRequestTime >= 60 * 1000 * 60 * 50) {
       localStorage.setItem(`${ip}_lastRequestTime`, currentTime);
       localStorage.setItem(`${ip}_requestsCount`, 1);
       console.log(window.localStorage.getItem('isLogin'))
