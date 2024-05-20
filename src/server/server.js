@@ -63,7 +63,7 @@ server.get('/api/getReviews', (req, res) => {
 
 
 
-server.post('/newLogin', async (req, res) => {
+server.post('/api/newLogin', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const userId = req.body.userId;

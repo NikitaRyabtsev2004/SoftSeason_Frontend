@@ -4,6 +4,5 @@ Disallow:
 Sitemap: https://softseason.ru/Sitemap.xml
 
 # Для softseason.store
-User-agent: *
 Disallow:
 Sitemap: https://softseason.store/Sitemap.xml

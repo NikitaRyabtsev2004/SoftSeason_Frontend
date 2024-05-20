@@ -32,7 +32,7 @@ class LoginModal extends Component {
         event.preventDefault();
         const inputCode = event.target.elements.verifyInput.value;
         if (inputCode === this.state.verifyCode) {
-            fetch('https://softseason.ru/api/newLogin', {
+            fetch(`https://${window.location.hostname}/api/newLogin`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ class LoginModal extends Component {
     }
     
     validatePassword(password) {
-        // Проверяем, что пароль состоит только из английских символов, содержит цифры, длину от 8 до 16 символов, допускаются специальные символы и верхний регистр
+        
         const regex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d\W]{8,16}$/;
         return regex.test(password);
     }
@@ -92,7 +92,7 @@ class LoginModal extends Component {
     }
 
     verifyCodeSend = () => {
-        fetch('https://softseason.ru/api/register', {
+        fetch(`https://${window.location.hostname}/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ class LoginModal extends Component {
     }
 
     changePasswordCodeSend = () => {
-        fetch('https://softseason.ru/api/changePasswordCode', {
+        fetch(`https://${window.location.hostname}/api/changePasswordCode`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ class LoginModal extends Component {
         event.preventDefault();
         const newPassword = event.target.elements.newPassword.value;
         this.setState({ changePassword: false });
-        fetch('https://softseason.ru/api/changePassword', {
+        fetch(`https://${window.location.hostname}/api/changePassword`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

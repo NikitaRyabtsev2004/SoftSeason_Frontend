@@ -15,13 +15,13 @@ export class Review extends Component {
   }
 
   fetchReviews = () => {
-    fetch('https://softseason.ru/api/getReviews')
+    fetch(`https://${window.location.hostname}/api/getReviews`)
       .then(response => response.json())
       .then(data => {
         if (data.status === 200) {
           this.setState({ reviews: data.reviews });
           this.setState({ date: data.reviewDate });
-        }
+	}
       })
       .catch(error => console.error('Ошибка:', error));
   }
@@ -39,7 +39,7 @@ export class Review extends Component {
       day: '2-digit',
     });
 
-    fetch('https://softseason.ru/api/submitReview', {
+    fetch(`https://${window.location.hostname}/api/submitReview`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -66,7 +66,7 @@ class FormModals extends Component {
     }
 
     else if (this.checkRequestsCount()) {
-      fetch('https://softseason.ru/api/submit', {
+      fetch(`https://${window.location.hostname}/api/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ class FormModals extends Component {
           alert('Отправлено1');
           this.props.onClose();
           ////////////////
-          fetch('https://softseason.ru/api/sendMail', {
+          fetch(`https://${window.location.hostname}/api/sendMail`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
