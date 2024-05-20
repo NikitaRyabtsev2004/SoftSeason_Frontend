@@ -23,7 +23,7 @@ header .shop-cart {
     opacity: 0;
     padding-bottom: 0;
     z-index: 101;
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: auto;
     color: #ffffff;
     overflow-x:hidden;

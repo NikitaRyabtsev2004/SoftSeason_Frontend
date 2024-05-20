@@ -157,7 +157,7 @@ header ul.nav li {
     text-align: center;
     letter-spacing: 1px;
     transition: all 500ms easy;
-    height: 28px;
+    height: 20px;
 }
 
 header ul.nav li:hover {
@@ -187,6 +187,13 @@ ul.nav li:nth-child(3) {
     transition: all 500ms ease;
     background: var(--nth-4);
     color: #000000;
+}
+
+@media screen and (max-width: 400px) {
+    ul.nav li:nth-child(3) {
+        font-size: 12px;
+        height: 28px;
+    }
 }
 
 ul.nav li:nth-child(4) {
