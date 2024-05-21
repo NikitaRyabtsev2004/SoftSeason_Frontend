@@ -258,9 +258,9 @@ class App extends React.Component {
               <div className='review'>
                 <div className="modal-content">
                   <div className='footer-information' style={{ fontSize: '20px', fontStyle: 'normal', marginBottom: '20px' }}>Нажмите чтобы ознакомиться:</div>
-                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenRequsites}>Раздел реквизиты</button>
-                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenConditions}>Условия</button>
-                  <button style={{ fontSize: '18px', fontWeight: '400', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenPolitics}>Политика конфиденциальности и обработки персональных данных сайта</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenRequsites}>Реквизиты</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginRight: '20px', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenConditions}>Условия продажи</button>
+                  <button style={{ fontSize: '18px', fontWeight: '400', marginBottom: '20px', width: '100%' }} onClick={this.handleFormOpenPolitics}>Политика обработки персональных данных</button>
                   <div className='closeButton' onClick={this.handleFormCloseFooter}>✖</div>
                 </div>
               </div>
