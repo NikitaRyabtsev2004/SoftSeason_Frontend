@@ -9,7 +9,6 @@
 
 .darkTheme header {
     background-color: #00000091;
-    border-bottom: solid #ffffff; 
 }
 
 .darkTheme ul.nav li {
@@ -51,7 +50,6 @@
 .darkTheme .trigger {
     background: var(--nth-4);
     color: #000000;
-    border-bottom: 1px solid #ffffff;
     border-top: 1px solid #ffffff;
 }
 
@@ -198,6 +196,10 @@
 }
 
 .darkTheme form .address1 {
+    color: #fff;
+}
+
+.darkTheme .address1 {
     color: #fff;
 }
 

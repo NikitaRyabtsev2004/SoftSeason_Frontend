@@ -44,8 +44,8 @@ class Header extends Component {
 
   render() {
     const showOrders = (props) => {
-      let sum = 0;
-      props.orders.forEach(el => sum += Number.parseFloat(el.price));
+    let sum = 0;
+    props.orders.forEach(el => sum += Number.parseFloat(el.price));
       return (
         <div>
           <div>
@@ -90,11 +90,11 @@ class Header extends Component {
                 {this.props.isLoggedIn ? (
                   <>
                     <li>{localStorage.getItem('email')}</li>
+                    <li onClick={this.props.handleLogout}>Выйти</li>
                   </>
                 ) : (
                   <li onClick={this.props.openLoginModal}>Войти | Зарегестрироваться</li>
                 )}
-                <li onClick={this.props.handleLogout}>Выйти</li>
               </ul>
             </div>
           </div>

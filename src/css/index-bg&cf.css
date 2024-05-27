@@ -193,7 +193,18 @@
     animation: text-2-animation 3s forwards;
     margin-right: 30px;
     margin-left: 30px;
-    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .top-presentation .text-2-1 {
+        text-align: justify;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .top-presentation .text-2-1 {
+        text-align: center;
+    }
 }
 
 /*------------------*/

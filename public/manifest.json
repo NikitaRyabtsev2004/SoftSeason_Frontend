@@ -1,0 +1,21 @@
+{
+  "name": "SoftSeason",
+  "short_name": "SoftSeason",
+  "description": "Онлайн-магазин SoftSeason предлагает широкий ассортимент женского трикотажа и вязаной одежды. Качественные изделия ручной работы по хорошим ценам.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "https://softseason.ru/favicon.svg",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "https://softseason.store/favicon.svg",
+      "sizes": "120x120",
+      "type": "image/png"
+    }
+  ]
+}

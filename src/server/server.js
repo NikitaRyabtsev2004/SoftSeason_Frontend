@@ -35,7 +35,63 @@ const generateVerifyCode = () => {
 
 const jwt = require('jsonwebtoken');
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt'); 
+
+const multer = require('multer');
+
+server.post(`/api/erase`, async (req, res) => {
+  try {
+    await erase();
+    res.send({ message: 'Operation completed successfully.' });
+  } catch (error) {
+    res.status(500).send({ error: 'An error occurred.' });
+  }
+});
+
+const storage1 = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const relativePath = path.resolve(process.cwd(), 'public/testImg');
+    cb(null, relativePath);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+const upload1 = multer({ storage: storage1 });
+
+server.post('/api/upload1', upload1.single('file'), (req, res) => {
+  res.json({ filePath1: `/testImg/${req.file.originalname}` });
+});
+
+const storage2 = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const relativePath = path.resolve(process.cwd(), 'public/testImg');
+    cb(null, relativePath);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+
+const upload2 = multer({ storage: storage2 });
+
+server.post('/api/upload2', upload2.single('file'), (req, res) => {
+  res.json({ filePath2: `/testImg/${req.file.originalname}` });
+});
+
+server.post('/api/insertDataBase', (req, res) => {
+  const { id, title, img, imgMacro, desc, category, price, material, color } = req.body;
+  const dbPath1 = path.join(__dirname, '..', 'server', 'ProductData.db');
+      const db1 = new sqlite3.Database(dbPath1, (err) => {
+        db1.run('INSERT INTO ProductData (id, title, img, imgMacro, desc, category, price, material, color) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [id, title, img, imgMacro, desc, category, price, material, color ], function (err) {
+          if (err) {
+            return res.status(500).send({ status: 500, message: "Internal server error" });
+          }
+          return res.status(200).send({ status: 200, message: "Review submitted successfully" });
+        });
+    })
+});
 
 server.post('/api/submitReview', (req, res) => {
   const { email, review } = req.body;
